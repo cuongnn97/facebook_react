@@ -1,12 +1,15 @@
 .navbar {
+  position: fixed;
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 100%;
+  width: 100%;
   height: 56px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
-  }
+  background-color: white;
+  z-index: 3;
+}
 .navbar h1 {
   color: #f1356d;
 }
