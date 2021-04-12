@@ -6,7 +6,6 @@ import React, {Component} from 'react';
 
 class Posts extends React.Component {
 
-
   constructor(props) {
     super(props);
     var today = new Date(),
@@ -36,11 +35,14 @@ class Posts extends React.Component {
       console.log(response)
       return response.json();
     });
-
     window.location.reload();
   }
 
   render() {
+    function countComments(data, id) {
+      const getCount =  data.filter((comment) => comment.post_id == id).length;
+      return getCount;
+    }
     return (
       <div>
         {this.props.posts.map(post => (
@@ -99,7 +101,7 @@ class Posts extends React.Component {
                   color: '#65676b',
                   fontSize: '15px',
                   marginTop: '10px'
-                }}>3 bình luận</p>
+                }}>{countComments(this.props.comments,post.id)} bình luận</p>
               </div>
             </div>
             <div className="post_action">
@@ -141,7 +143,9 @@ class Posts extends React.Component {
               </div>
             </div>
             <div className="comments_post">
+
               {this.props.comments.filter((comment) => comment.post_id == post.id).map(comment => (
+
                 <div className="comment_line">
                   <img style={{
                     float: 'left',
@@ -149,16 +153,17 @@ class Posts extends React.Component {
                     marginTop: '1%',
                     borderRadius: '50%',
                   }} src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'} width="5%" alt="submit" />
-                      <p style={{
-                        float: 'left',
-                        color: 'black',
-                        fontSize: '15px',
-                        marginTop: '1%',
-                        marginLeft: '2%',
-                        width: '80%'
-                      }}>{comment.content}</p>
+                  <p style={{
+                    float: 'left',
+                    color: 'black',
+                    fontSize: '15px',
+                    marginTop: '1%',
+                    marginLeft: '2%',
+                    width: '80%'
+                  }}>{comment.content}</p>
                 </div>
-              ))}
+              ))
+              }
 
               <img
                 src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'}

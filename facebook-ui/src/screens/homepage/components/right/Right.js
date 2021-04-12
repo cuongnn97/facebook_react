@@ -7,7 +7,11 @@ const Right = () => {
   const { data: comments } = GetData('http://localhost:8000/comments');
 
   function sortByDate(sortList) {
-    return sortList.sort((a,b) => (a.create_time > b.create_time) ? 1 : -1);
+    if(sortList != null){
+      return sortList.sort((a,b) => (a.create_time > b.create_time) ? 1 : -1);
+    } else {
+      return null;
+    }
   }
 
   return (
