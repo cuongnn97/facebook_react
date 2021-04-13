@@ -37,6 +37,12 @@
       "content": "abcd",
       "user_id": "Cuong Nguyen Nhat",
       "id": 4
+    },
+    {
+      "create_time": "13/4/2021",
+      "content": "gtg",
+      "user_id": "Cuong Nguyen Nhat",
+      "id": 5
     }
   ],
   "comments": [
@@ -49,7 +55,7 @@
     },
     {
       "create_time": "03/05/2021",
-      "content": "om repetition, injected humour, or non-characteristic words etc.",
+      "content": "om repetition, injected teristic words etc.",
       "user_id": "1",
       "post_id": "1",
       "id": 2

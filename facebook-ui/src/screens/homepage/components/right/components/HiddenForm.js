@@ -24,23 +24,26 @@ class HiddenForm extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(this.state)
-    }).then(function(response) {
+    })
+    .then(function(response) {
       console.log(response)
       return response.json();
     });
 
     event.preventDefault();
-}
+  }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Content:
-          <input type="text" value={this.state.value} name="content" onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="hidden_form" >
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Content:
+            <input type="text" value={this.state.value} name="content" onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     );
   }
 }

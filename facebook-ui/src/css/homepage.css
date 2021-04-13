@@ -267,3 +267,14 @@
   margin-bottom: 2%;
   text-align: left;
 }
+
+.hidden_form {
+  background-color: white;
+  position: fixed;
+  z-index: 3;
+  width: 25%;
+  height: 50%;
+  left: 40%;
+  top: 25%;
+  border-radius: 10px;
+}

@@ -23,7 +23,7 @@ class Posts extends React.Component {
     this.setState({post_id: id});
   }
 
-  modifyTask(event) {
+  modifyTask = (event) => {
 
     fetch('http://localhost:8000/comments/', {
       method: 'POST',
@@ -111,11 +111,11 @@ class Posts extends React.Component {
                   marginLeft: '20%',
                   marginTop: '5%'
                 }} src={icon_like} width="15%" alt="submit" />
-                    <p style={{
-                      color: '#65676b',
-                      fontSize: '15px',
-                      marginTop: '5%'
-                    }}><b>Thích</b></p>
+                <p style={{
+                  color: '#65676b',
+                  fontSize: '15px',
+                  marginTop: '5%'
+                }}><b>Thích</b></p>
               </div>
               <div className="picture_video">
                 <img style={{
@@ -123,11 +123,11 @@ class Posts extends React.Component {
                   marginLeft: '20%',
                   marginTop: '5%'
                 }} src={icon_comment} width="15%" alt="submit" />
-                    <p style={{
-                      color: '#65676b',
-                      fontSize: '15px',
-                      marginTop: '5%'
-                    }}><b>Bình luận</b></p>
+                <p style={{
+                  color: '#65676b',
+                  fontSize: '15px',
+                  marginTop: '5%'
+                }}><b>Bình luận</b></p>
               </div>
               <div className="emotion_activities">
                 <img style={{
@@ -135,11 +135,11 @@ class Posts extends React.Component {
                   marginLeft: '20%',
                   marginTop: '5%'
                 }} src={icon_share} width="15%" alt="submit" />
-                    <p style={{
-                      color: '#65676b',
-                      fontSize: '15px',
-                      marginTop: '5%'
-                    }}><b>Chia sẻ</b></p>
+                <p style={{
+                  color: '#65676b',
+                  fontSize: '15px',
+                  marginTop: '5%'
+                }}><b>Chia sẻ</b></p>
               </div>
             </div>
             <div className="comments_post">
@@ -174,7 +174,7 @@ class Posts extends React.Component {
                   float: 'left',
                   borderRadius: '50%',
                 }} alt="submit" />
-              <form onSubmit={(e)=>this.modifyTask(e)}>
+              <form onSubmit={this.modifyTask}>
                 <input onChange={(e)=>this.handleChange(e,post.id)} className={"action_comments_" + post.id} type="text" placeholder="Viết bình luận...." style={{
                   width: '83%',
                   height: '37px',

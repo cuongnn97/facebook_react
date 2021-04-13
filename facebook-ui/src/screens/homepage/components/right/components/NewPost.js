@@ -16,11 +16,22 @@ class NewPost extends Component {
 
   hideComponent() {
     this.setState({ showHideForm: !this.state.showHideForm });
+
+    if(this.state.showHideForm){
+      //document.body.style.opacity = "1";
+    }else {
+      //document.body.style.opacity = "0.5";
+    }
+  }
+
+  makeAppear = () => {
+    this.setState(prevState => ({
+      opacity: prevState.opacity + 0.2
+    }))
   }
 
   render() {
     const { showHideForm} = this.state;
-
     return (
       <div>
         {showHideForm && <HiddenForm />}
