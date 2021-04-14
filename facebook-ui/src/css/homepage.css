@@ -273,7 +273,16 @@
   width: 80%;
   height: 40px;
   border-radius: 10px;
-  background-color: #cdcecf;
+  background-color: #f0f2f5;
+  margin-bottom: 2%;
+  text-align: left;
+}
+div[class*="reply_field"] {
+  margin-left: 10%;
+  width: 80%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #f0f2f5;
   margin-bottom: 2%;
   text-align: left;
 }

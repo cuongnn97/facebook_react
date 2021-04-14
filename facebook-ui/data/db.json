@@ -48,131 +48,48 @@
   "comments": [
     {
       "create_time": "14/4/2021",
-      "content": "new comment",
+      "content": "abccccc",
       "user_id": "1",
-      "post_id": 1,
+      "post_id": 2,
       "parent_id": "0",
+      "replyField": false,
       "id": 1
     },
     {
       "create_time": "14/4/2021",
-      "content": "cuong abc",
+      "content": "end to repeat predefined chun",
       "user_id": "1",
       "post_id": 1,
       "parent_id": "0",
+      "replyField": false,
       "id": 2
     },
     {
       "create_time": "14/4/2021",
-      "content": "cuong abc",
+      "content": "nicely done",
       "user_id": "1",
       "post_id": 1,
-      "parent_id": "1",
+      "parent_id": 2,
+      "replyField": true,
       "id": 3
     },
     {
       "create_time": "14/4/2021",
-      "content": "cuong abc",
+      "content": "ssage of Lorem Ipsum, you need to be sure",
       "user_id": "1",
-      "post_id": 1,
-      "parent_id": "2",
+      "post_id": 2,
+      "parent_id": "0",
+      "replyField": false,
       "id": 4
     },
     {
       "create_time": "14/4/2021",
-      "content": "comment child 1",
+      "content": "reply abccccc",
       "user_id": "1",
-      "post_id": 1,
+      "post_id": 2,
       "parent_id": 1,
+      "replyField": true,
       "id": 5
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "comment child 2",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 6
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "aaaaaa",
-      "user_id": "1",
-      "post_id": 2,
-      "parent_id": "0",
-      "id": 7
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "reply aaaaaa",
-      "user_id": "1",
-      "post_id": 2,
-      "parent_id": 7,
-      "id": 8
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 9
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 10
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 11
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 12
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 13
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 14
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 15
-    },
-    {
-      "create_time": "14/4/2021",
-      "content": "âaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "parent_id": 2,
-      "id": 16
     }
   ],
   "user_relationship": [

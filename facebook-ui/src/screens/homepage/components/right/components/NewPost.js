@@ -18,16 +18,10 @@ class NewPost extends Component {
     this.setState({ showHideForm: !this.state.showHideForm });
 
     if(this.state.showHideForm){
-      //document.body.style.opacity = "1";
-    }else {
-      //document.body.style.opacity = "0.5";
-    }
-  }
 
-  makeAppear = () => {
-    this.setState(prevState => ({
-      opacity: prevState.opacity + 0.2
-    }))
+    }else {
+
+    }
   }
 
   render() {
@@ -35,7 +29,6 @@ class NewPost extends Component {
     return (
       <div>
         {showHideForm && <HiddenForm />}
-        <hr/>
         <div className="new_post">
           <img
             src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'}
@@ -59,12 +52,12 @@ class NewPost extends Component {
               <img style={{
                 marginLeft: '8px'
               }} src={red_camera} width="15%" alt="submit" />
-                  <p style={{
-                    color: '#65676b',
-                    fontSize: '15px',
-                    marginTop: '-22px',
-                    marginLeft: '35px'
-                  }}><b>Video trực tiếp</b></p>
+              <p style={{
+                color: '#65676b',
+                fontSize: '15px',
+                marginTop: '-22px',
+                marginLeft: '35px'
+              }}><b>Video trực tiếp</b></p>
             </div>
             <div className="picture_video">
               <img style={{

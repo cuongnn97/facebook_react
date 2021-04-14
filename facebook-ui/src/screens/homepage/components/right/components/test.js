@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 class Test extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +14,6 @@ class Test extends React.Component {
   }
 
   handleSubmit = (event) => {
-    alert('A form was submitted: ' + this.state);
     fetch('http://localhost:8000/users/', {
         method: 'POST',
         headers: {
@@ -25,7 +23,6 @@ class Test extends React.Component {
       }).then(function(response) {
         return response.json();
       });
-
     event.preventDefault();
   }
 

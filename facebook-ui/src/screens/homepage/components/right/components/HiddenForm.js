@@ -1,44 +1,47 @@
-import React, {Component} from 'react';
-
+import React, { Component } from "react";
 
 class HiddenForm extends React.Component {
   constructor(props) {
     super(props);
     var today = new Date(),
-    date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+    date = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
     this.state = {
       create_time: date,
-      content: '' ,
-      user_id: 'Cuong Nguyen Nhat'
-    }
+      content: "",
+      user_id: "Cuong Nguyen Nhat",
+    };
   }
 
   handleChange = (event) => {
-    this.setState({[event.target.name]: event.target.value});
-  }
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   handleSubmit = (event) => {
-    fetch('http://localhost:8000/posts/', {
-      method: 'POST',
+    fetch("http://localhost:8000/posts/", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state)
-    })
-    .then(function(response) {
+      body: JSON.stringify(this.state),
+    }).then(function (response) {
       return response.json();
     });
 
     event.preventDefault();
-  }
+  };
 
   render() {
     return (
-      <div className="hidden_form" >
+      <div className="hidden_form">
         <form onSubmit={this.handleSubmit}>
           <label>
             Content:
-            <input type="text" value={this.state.value} name="content" onChange={this.handleChange} />
+            <input
+              type="text"
+              value={this.state.value}
+              name="content"
+              onChange={this.handleChange}
+            />
           </label>
           <input type="submit" value="Submit" />
         </form>

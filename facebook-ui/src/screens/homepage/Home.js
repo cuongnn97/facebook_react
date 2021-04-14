@@ -4,18 +4,13 @@ import Right from "./components/right/Right";
 import React, { Component } from "react";
 import HiddenForm from "./components/right/components/HiddenForm";
 
-
 class Home extends Component {
-  // const { error, isPending, data: blogs } = useFetch('http://localhost:8000/posts')
-
   constructor() {
     super();
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
-
     return (
       <div className="body_homepage">
         <Header />

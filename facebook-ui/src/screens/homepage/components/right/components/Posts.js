@@ -16,7 +16,8 @@ class Posts extends React.Component {
       content: '' ,
       user_id: '1',
       post_id: '',
-      parent_id: '0'
+      parent_id: '0',
+      replyField: false
     }
   }
 
@@ -32,8 +33,6 @@ class Posts extends React.Component {
     this.setState({parent_id: parent_id});
   }
 
-
-
   modifyTask = (event) => {
 
     fetch('http://localhost:8000/comments/', {
@@ -48,6 +47,9 @@ class Posts extends React.Component {
     window.location.reload();
   }
 
+  replyField = (event, id) => {
+    this.setState({ replyField: !this.state.replyField });
+  }
 
   render() {
     function countComments(data, id) {
@@ -158,45 +160,42 @@ class Posts extends React.Component {
 
               {this.props.comments.filter((comment_parent) => (comment_parent.post_id == post.id && comment_parent.parent_id == "0")).map(comment_parent => (
                 <div>
-                  <div>
-                    <Comments comment={comment_parent}/>
-                    <div className="comment_child">
-                      <img
-                      src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'}
-                      style={{
-                        width: '6%',
-                        float: 'left',
-                        marginLeft: '1%',
-                        marginTop: '1%',
-                        borderRadius: '50%',
-                      }} alt="submit" />
-                    <form onSubmit={this.modifyTask}>
-                      <input onChange={(e)=>this.commentChild(e,post.id,comment_parent.id)} type="text" placeholder="Trả lời....." style={{
-                        float: 'left',
-                        color: 'black',
-                        fontSize: '15px',
-                        marginTop: '1%',
-                        marginLeft: '2%',
-                        borderRadius: '15px',
-                        backgroundColor: '#f0f2f5',
-                        border: '1px solid #f0f2f5',
-                        width: '80%'
-                      }} />
-                    </form>
-                    </div>
-
-                  </div>
-
+                  <Comments comment={comment_parent}/>
+                  <button onClick={(e)=>this.replyField(e,comment_parent.id)}>Tra loi</button>
                   {this.props.comments.filter((comment) => (parseInt(comment.parent_id) == comment_parent.id)).map(comment => (
-                    <div>
-                      <Comments comment={comment}/>
-                    </div>
+                    <Comments comment={comment}/>
                   ))
+                  }
+                  {this.state.replyField &&
+                    <div className={"reply_field_" + comment_parent.id} >
+                      <img
+                        src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'}
+                        style={{
+                          width: '6%',
+                          float: 'left',
+                          marginLeft: '1%',
+                          marginTop: '1%',
+                          borderRadius: '50%',
+                        }} alt="submit" />
+                      <form onSubmit={this.modifyTask}>
+                        <input onChange={(e)=>this.commentChild(e,post.id,comment_parent.id)} type="text" placeholder="Trả lời....."
+                          style={{
+                            float: 'left',
+                            color: 'black',
+                            fontSize: '15px',
+                            marginTop: '1%',
+                            marginLeft: '2%',
+                            borderRadius: '15px',
+                            backgroundColor: '#f0f2f5',
+                            border: '1px solid #f0f2f5',
+                            width: '80%'
+                        }} />
+                      </form>
+                    </div>
                   }
                 </div>
               ))
               }
-
               <img
                 src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'}
                 style={{
@@ -207,7 +206,7 @@ class Posts extends React.Component {
                   borderRadius: '50%',
                 }} alt="submit" />
               <form onSubmit={this.modifyTask}>
-                <input onChange={(e)=>this.handleChange(e,post.id)} className={"action_comments_" + post.id} type="text" placeholder="Viết bình luận...." style={{
+                <input onChange={(e)=>this.handleChange(e,post.id)} type="text" placeholder="Viết bình luận...." style={{
                   width: '83%',
                   height: '37px',
                   borderRadius: '15px',
@@ -220,7 +219,6 @@ class Posts extends React.Component {
           </div>
         ))}
       </div>
-
     );
   }
 }
