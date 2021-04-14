@@ -23,12 +23,11 @@ class Test extends React.Component {
         },
         body: JSON.stringify(this.state)
       }).then(function(response) {
-        console.log(response)
         return response.json();
       });
 
     event.preventDefault();
-}
+  }
 
   render() {
     return (

@@ -3,6 +3,7 @@ import icon_like from '../images/icon_like.jpg'
 import icon_comment from '../images/icon_comment.png'
 import icon_share from '../images/icon_share.jpg'
 import React, {Component} from 'react';
+import Comments from './Comments';
 
 class Posts extends React.Component {
 
@@ -14,14 +15,24 @@ class Posts extends React.Component {
       create_time: date,
       content: '' ,
       user_id: '1',
-      post_id: ''
+      post_id: '',
+      parent_id: '0'
     }
   }
 
   handleChange = (event,id) => {
     this.setState({content: event.target.value});
     this.setState({post_id: id});
+    this.setState({parent_id: '0'});
   }
+
+  commentChild = (event,id,parent_id) => {
+    this.setState({content: event.target.value});
+    this.setState({post_id: id});
+    this.setState({parent_id: parent_id});
+  }
+
+
 
   modifyTask = (event) => {
 
@@ -32,17 +43,18 @@ class Posts extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(function(response) {
-      console.log(response)
       return response.json();
     });
     window.location.reload();
   }
+
 
   render() {
     function countComments(data, id) {
       const getCount =  data.filter((comment) => comment.post_id == id).length;
       return getCount;
     }
+
     return (
       <div>
         {this.props.posts.map(post => (
@@ -144,23 +156,43 @@ class Posts extends React.Component {
             </div>
             <div className="comments_post">
 
-              {this.props.comments.filter((comment) => comment.post_id == post.id).map(comment => (
+              {this.props.comments.filter((comment_parent) => (comment_parent.post_id == post.id && comment_parent.parent_id == "0")).map(comment_parent => (
+                <div>
+                  <div>
+                    <Comments comment={comment_parent}/>
+                    <div className="comment_child">
+                      <img
+                      src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'}
+                      style={{
+                        width: '6%',
+                        float: 'left',
+                        marginLeft: '1%',
+                        marginTop: '1%',
+                        borderRadius: '50%',
+                      }} alt="submit" />
+                    <form onSubmit={this.modifyTask}>
+                      <input onChange={(e)=>this.commentChild(e,post.id,comment_parent.id)} type="text" placeholder="Trả lời....." style={{
+                        float: 'left',
+                        color: 'black',
+                        fontSize: '15px',
+                        marginTop: '1%',
+                        marginLeft: '2%',
+                        borderRadius: '15px',
+                        backgroundColor: '#f0f2f5',
+                        border: '1px solid #f0f2f5',
+                        width: '80%'
+                      }} />
+                    </form>
+                    </div>
 
-                <div className="comment_line">
-                  <img style={{
-                    float: 'left',
-                    marginLeft: '1%',
-                    marginTop: '1%',
-                    borderRadius: '50%',
-                  }} src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82'} width="5%" alt="submit" />
-                  <p style={{
-                    float: 'left',
-                    color: 'black',
-                    fontSize: '15px',
-                    marginTop: '1%',
-                    marginLeft: '2%',
-                    width: '80%'
-                  }}>{comment.content}</p>
+                  </div>
+
+                  {this.props.comments.filter((comment) => (parseInt(comment.parent_id) == comment_parent.id)).map(comment => (
+                    <div>
+                      <Comments comment={comment}/>
+                    </div>
+                  ))
+                  }
                 </div>
               ))
               }

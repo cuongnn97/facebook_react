@@ -47,74 +47,132 @@
   ],
   "comments": [
     {
-      "create_time": "03/03/2021",
-      "content": "Why doected humour, or non-characteristic words etc.",
+      "create_time": "14/4/2021",
+      "content": "new comment",
       "user_id": "1",
-      "post_id": "1",
+      "post_id": 1,
+      "parent_id": "0",
       "id": 1
     },
     {
-      "create_time": "03/05/2021",
-      "content": "om repetition, injected teristic words etc.",
+      "create_time": "14/4/2021",
+      "content": "cuong abc",
       "user_id": "1",
-      "post_id": "1",
+      "post_id": 1,
+      "parent_id": "0",
       "id": 2
     },
     {
-      "create_time": "04/04/2021",
-      "content": "Why dohumour, or non-characteristic words etc.",
+      "create_time": "14/4/2021",
+      "content": "cuong abc",
       "user_id": "1",
-      "post_id": "1",
+      "post_id": 1,
+      "parent_id": "1",
       "id": 3
     },
     {
-      "create_time": "04/04/2021",
-      "content": "Why dohumour, or non-characteristic words etc.",
+      "create_time": "14/4/2021",
+      "content": "cuong abc",
       "user_id": "1",
-      "post_id": "2",
+      "post_id": 1,
+      "parent_id": "2",
       "id": 4
     },
     {
-      "create_time": "04/05/2021",
-      "content": "Why dohumour, or non-characteristic words etc.",
+      "create_time": "14/4/2021",
+      "content": "comment child 1",
       "user_id": "1",
-      "post_id": "2",
+      "post_id": 1,
+      "parent_id": 1,
       "id": 5
     },
     {
-      "create_time": "12/4/2021",
-      "content": "abcd",
+      "create_time": "14/4/2021",
+      "content": "comment child 2",
       "user_id": "1",
-      "post_id": "10",
+      "post_id": 1,
+      "parent_id": 2,
       "id": 6
     },
     {
-      "create_time": "12/4/2021",
-      "content": "addd",
+      "create_time": "14/4/2021",
+      "content": "aaaaaa",
       "user_id": "1",
-      "post_id": "10",
+      "post_id": 2,
+      "parent_id": "0",
       "id": 7
     },
     {
-      "create_time": "12/4/2021",
-      "content": "abc",
+      "create_time": "14/4/2021",
+      "content": "reply aaaaaa",
       "user_id": "1",
-      "post_id": 1,
+      "post_id": 2,
+      "parent_id": 7,
       "id": 8
     },
     {
-      "create_time": "12/4/2021",
-      "content": "who who who who who who who who who who who who",
+      "create_time": "14/4/2021",
+      "content": "âaaa",
       "user_id": "1",
-      "post_id": 2,
+      "post_id": 1,
+      "parent_id": 2,
       "id": 9
     },
     {
-      "create_time": "12/4/2021",
-      "content": "new comments",
+      "create_time": "14/4/2021",
+      "content": "âaaa",
       "user_id": "1",
-      "post_id": 4,
+      "post_id": 1,
+      "parent_id": 2,
       "id": 10
+    },
+    {
+      "create_time": "14/4/2021",
+      "content": "âaaa",
+      "user_id": "1",
+      "post_id": 1,
+      "parent_id": 2,
+      "id": 11
+    },
+    {
+      "create_time": "14/4/2021",
+      "content": "âaaa",
+      "user_id": "1",
+      "post_id": 1,
+      "parent_id": 2,
+      "id": 12
+    },
+    {
+      "create_time": "14/4/2021",
+      "content": "âaaa",
+      "user_id": "1",
+      "post_id": 1,
+      "parent_id": 2,
+      "id": 13
+    },
+    {
+      "create_time": "14/4/2021",
+      "content": "âaaa",
+      "user_id": "1",
+      "post_id": 1,
+      "parent_id": 2,
+      "id": 14
+    },
+    {
+      "create_time": "14/4/2021",
+      "content": "âaaa",
+      "user_id": "1",
+      "post_id": 1,
+      "parent_id": 2,
+      "id": 15
+    },
+    {
+      "create_time": "14/4/2021",
+      "content": "âaaa",
+      "user_id": "1",
+      "post_id": 1,
+      "parent_id": 2,
+      "id": 16
     }
   ],
   "user_relationship": [

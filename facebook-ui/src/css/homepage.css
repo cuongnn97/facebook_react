@@ -268,6 +268,16 @@
   text-align: left;
 }
 
+.comment_child {
+  margin-left: 10%;
+  width: 80%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #cdcecf;
+  margin-bottom: 2%;
+  text-align: left;
+}
+
 .hidden_form {
   background-color: white;
   position: fixed;
