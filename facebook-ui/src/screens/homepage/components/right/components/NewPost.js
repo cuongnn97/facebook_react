@@ -16,12 +16,6 @@ class NewPost extends Component {
 
   hideComponent() {
     this.setState({ showHideForm: !this.state.showHideForm });
-
-    if(this.state.showHideForm){
-
-    }else {
-
-    }
   }
 
   render() {

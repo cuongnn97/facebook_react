@@ -26,7 +26,6 @@ class HiddenForm extends React.Component {
     }).then(function (response) {
       return response.json();
     });
-
     event.preventDefault();
   };
 
