@@ -79,13 +79,57 @@
     {
       "create_time": "20/4/2021",
       "content": "aaaaa",
-      "user_id": "1",
+      "user_id": "3",
       "username": "tung",
       "post_id": 1,
       "parent_id": 1,
       "replyField": true,
       "reactions": false,
       "id": 2
+    },
+    {
+      "create_time": "20/4/2021",
+      "content": "new comment",
+      "user_id": "1",
+      "username": "cuong",
+      "post_id": 1,
+      "parent_id": 1,
+      "replyField": true,
+      "reactions": false,
+      "id": 3
+    },
+    {
+      "create_time": "20/4/2021",
+      "content": "abc",
+      "user_id": "1",
+      "username": "cuong",
+      "post_id": 7,
+      "parent_id": "0",
+      "replyField": false,
+      "reactions": false,
+      "id": 4
+    },
+    {
+      "create_time": "20/4/2021",
+      "content": "abc",
+      "user_id": "1",
+      "post_id": 7,
+      "username": "cuong",
+      "parent_id": 4,
+      "replyField": true,
+      "reactions": false,
+      "id": 5
+    },
+    {
+      "create_time": "20/4/2021",
+      "content": "abc",
+      "user_id": "1",
+      "post_id": 7,
+      "username": "cuong",
+      "parent_id": 4,
+      "replyField": true,
+      "reactions": false,
+      "id": 6
     }
   ],
   "user_relationship": [
@@ -128,23 +172,23 @@
   "reactions": [
     {
       "user_id": "1",
-      "post_id": 1,
-      "id": 1
-    },
-    {
-      "user_id": "3",
-      "post_id": 1,
-      "id": 2
-    },
-    {
-      "user_id": "1",
       "post_id": 2,
       "id": 3
     },
     {
       "user_id": "1",
-      "post_id": 3,
-      "id": 4
+      "post_id": 4,
+      "id": 5
+    },
+    {
+      "user_id": "1",
+      "post_id": 7,
+      "id": 6
+    },
+    {
+      "user_id": "3",
+      "post_id": 7,
+      "id": 8
     }
   ]
 }

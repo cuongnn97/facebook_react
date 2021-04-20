@@ -18,7 +18,7 @@ class Posts extends React.Component {
       var reactions = [];
       for (var i = 0, l = data.length; i < l; i++) {
         var obj = data[i];
-        if (obj.user_id == "1" && obj.post_id == post_id) {
+        if (obj.user_id == localStorage.getItem('user_id') && obj.post_id == post_id) {
           reactions.push(obj);
         }
       }

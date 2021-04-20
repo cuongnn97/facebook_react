@@ -18,7 +18,6 @@ const Header = (props) => {
     fetch("http://localhost:8000/users/"+props.user_id)
       .then((response) => response.json())
       .then((data) => {
-        debugger;
         setUsername(data.username);
       });
     return username;

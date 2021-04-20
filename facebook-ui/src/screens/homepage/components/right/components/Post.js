@@ -20,6 +20,7 @@ class Post extends React.Component {
       content: "",
       user_id: "1",
       post_id: "",
+      username: "",
       parent_id: "0",
       replyField: false,
       reactions: false,
@@ -36,6 +37,7 @@ class Post extends React.Component {
     this.setState({ content: event.target.value });
     this.setState({ post_id: id });
     this.setState({ parent_id: parent_id });
+    this.setState({ username: localStorage.getItem("username") });
   };
 
   modifyTask = (event) => {
@@ -73,7 +75,7 @@ class Post extends React.Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user_id: "1",
+          user_id: localStorage.getItem("user_id"),
           post_id: post_id,
         }),
       }).then(function (response) {

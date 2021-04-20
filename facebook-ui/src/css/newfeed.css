@@ -157,3 +157,8 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.comment_username:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

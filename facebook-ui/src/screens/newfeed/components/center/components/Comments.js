@@ -6,7 +6,12 @@ class Comments extends React.Component {
     this.state = {};
   }
 
+
+
   render() {
+    function backToHomepage(id) {
+      window.location.href = "/homepage?user_id=" + id;
+    }
     let nameClass = "";
     if (
       this.props.comment.parent_id != "0"
@@ -29,7 +34,9 @@ class Comments extends React.Component {
           width="5%"
           alt="submit"
         />
-        <span>{this.props.comment.username}</span>
+        <span className="comment_username"
+          onClick={(e) => backToHomepage(this.props.comment.user_id)}
+        >{this.props.comment.username}</span>
         <div
           style={{
             float: "left",

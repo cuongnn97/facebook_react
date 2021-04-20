@@ -7,7 +7,7 @@ import icon_mess from './images/icon_mess.png'
 import icon_bell from './images/icon_bell.png'
 import icon_arrow from './images/icon_arrow.png'
 import facebooklogo from './images/facebook_logo.png'
-import avatar from '../images/avatar.jpg'
+import avatar from './images/avatar.jpg'
 
 
 const Navbar = () => {
