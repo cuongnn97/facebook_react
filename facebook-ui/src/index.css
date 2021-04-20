@@ -3,6 +3,7 @@
 @import url('css/top-menu.css');
 @import url('css/homepage.css');
 @import url('css/newfeed.css');
+@import url('css/login.css');
 /* base styles */
 * {
   margin: 0;

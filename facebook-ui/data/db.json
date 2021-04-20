@@ -144,26 +144,20 @@
   ],
   "users": [
     {
-      "name": "cuong",
+      "username": "cuong",
       "password": "cuong",
       "id": 1
     },
     {
-      "name": "thu",
+      "username": "thu",
       "password": "thu",
       "id": 2
     },
     {
-      "name": "tung",
+      "username": "tung",
       "password": "tung",
       "id": 3
     }
   ],
-  "reactions": [
-    {
-      "user_id": "1",
-      "post_id": 3,
-      "id": 4
-    }
-  ]
+  "reactions": []
 }

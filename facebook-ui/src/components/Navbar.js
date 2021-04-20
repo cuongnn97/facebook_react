@@ -11,6 +11,12 @@ import avatar from '../images/avatar.jpg'
 
 
 const Navbar = () => {
+
+  function handleClick() {
+    localStorage.clear();
+    window.location.reload();
+  }
+
   return (
     <nav className="navbar">
       <img src={facebooklogo} width="40px" alt="Logo" />
@@ -57,7 +63,7 @@ const Navbar = () => {
           <button className="icon_right" type="submit">
             <img src={icon_bell} width="80%" alt="Logo" />
           </button>
-          <button className="icon_right" type="submit">
+          <button onClick={(e) => handleClick()} className="icon_right" type="submit">
             <img src={icon_arrow} width="80%" alt="Logo" />
           </button>
         </div>
