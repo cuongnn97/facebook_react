@@ -2,10 +2,10 @@ import Navbar from './components/Navbar';
 import Home from './screens/homepage/Home';
 import Login from './screens/login/Login';
 import Newfeed from "./screens/newfeed/Newfeed";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
+
   function getUser() {
     var user_id = localStorage.getItem("user_id");
     if (user_id != null){
@@ -14,7 +14,6 @@ function App() {
       return false;
     };
   }
-
   return (
     <Router>
       <div className="App">
@@ -30,12 +29,13 @@ function App() {
               {!getUser() && <Login />}
             </Route>
             <Route path="/homepage">
-              <Navbar />
-              <Home />
-            </Route>
-            <Route exact path="/newfeed">
-              <Navbar />
-              <Newfeed />
+              {getUser() && (
+                <div>
+                  <Navbar />
+                  <Home />
+                </div>
+              )}
+              {!getUser() && <Login />}
             </Route>
           </Switch>
         </div>

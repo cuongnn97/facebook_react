@@ -8,7 +8,8 @@ class HiddenForm extends React.Component {
     this.state = {
       create_time: date,
       content: "",
-      user_id: "Cuong Nguyen Nhat",
+      user_id: localStorage.getItem("user_id"),
+      username: localStorage.getItem("username"),
     };
   }
 

@@ -2,7 +2,7 @@ import NewPost from "./components/NewPost";
 import GetData from "./components/GetData";
 import Posts from "./components/Posts";
 
-const Right = () => {
+const Right = (props) => {
   const { data: posts } = GetData("http://localhost:8000/posts");
   const { data: comments } = GetData("http://localhost:8000/comments");
   const { data: reactions } = GetData("http://localhost:8000/reactions");
@@ -35,7 +35,7 @@ const Right = () => {
         reactions && (
           <Posts
             posts={sortByDate(
-              posts.filter((post) => post.user_id === "Cuong Nguyen Nhat")
+              posts.filter((post) => post.user_id === props.user_id)
             )}
             comments={sortByParentId(comments)}
             reactions={reactions}

@@ -7,11 +7,22 @@ import icon_find from './images/icon_find.jpg'
 import icon_eye from './images/icon_eye.png'
 import icon_edit from './images/icon_edit.png'
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
 
-const Header = () => {
+const Header = (props) => {
+
+  const [username, setUsername] = useState(null);
   // const { error, isPending, data: blogs } = useFetch('http://localhost:8000/posts')
-
+  function getUserName() {
+    fetch("http://localhost:8000/users/"+props.user_id)
+      .then((response) => response.json())
+      .then((data) => {
+        debugger;
+        setUsername(data.username);
+      });
+    return username;
+  }
   return (
     <div className="header_homepage">
       <div className="cover_image">
@@ -28,7 +39,7 @@ const Header = () => {
         }}/>
       </div>
       <div className="user_name">
-        <h1><b>Cuong Nguyen Nhat</b></h1>
+        <h1><b>{getUserName()}</b></h1>
         <Link href="/a"><b>Thêm tiểu sử</b></Link>
       </div>
       <div className="menu_home">

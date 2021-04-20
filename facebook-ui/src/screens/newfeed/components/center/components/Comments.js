@@ -29,18 +29,19 @@ class Comments extends React.Component {
           width="5%"
           alt="submit"
         />
-        <p
+        <span>{this.props.comment.username}</span>
+        <div
           style={{
             float: "left",
             color: "black",
             fontSize: "15px",
-            marginTop: "1%",
-            marginLeft: "2%",
+            marginTop: "2.5%",
+            marginLeft: "-7%",
             width: "80%",
           }}
         >
           {this.props.comment.content}
-        </p>
+        </div>
       </div>
     );
   }

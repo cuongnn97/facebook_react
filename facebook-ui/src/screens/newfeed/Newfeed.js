@@ -4,15 +4,15 @@ import Left from "./components/left/Left";
 import Right from "./components/right/Right";
 
 class Newfeed extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
   render() {
     return (
       <div className="newfeed_content">
-        <Left />
+        <Left/>
         <Center />
         <Right />
       </div>

@@ -1,14 +1,22 @@
 import avatar from './images/avatar.jpg'
 import icon_arrow from "./images/icon_arrow.png";
 const Left = () => {
+
+  function handleClick() {
+    window.location.href = "/homepage?user_id=" + localStorage.getItem("user_id");
+  }
+
   return (
     <div className="content_left">
-      <div className="left_item">
+      <div
+        onClick={(e) => handleClick()}
+        className="left_item_username"
+      >
         <div className="icon_setting">
           <img src={avatar} width="8%" alt="submit" />
         </div>
         <div className="content_setting">
-          <p>Cuong Nguyen Nhat</p>
+          <p>{localStorage.getItem("username")}</p>
         </div>
       </div>
 
@@ -174,37 +182,61 @@ const Left = () => {
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}>Quyền riêng tư - </a>
+          }}
+        >
+          Quyền riêng tư -{" "}
+        </a>
         <a
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}> Điều khoản -</a>
+          }}
+        >
+          {" "}
+          Điều khoản -
+        </a>
         <a
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}>Quảng cáo -</a>
+          }}
+        >
+          Quảng cáo -
+        </a>
         <a
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}> Lựa chọn quảng cáo - </a>
+          }}
+        >
+          {" "}
+          Lựa chọn quảng cáo -{" "}
+        </a>
         <a
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}>Cookie -</a>
+          }}
+        >
+          Cookie -
+        </a>
         <a
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}>Xem thêm - </a>
+          }}
+        >
+          Xem thêm -{" "}
+        </a>
         <a
           style={{
             color: "#65676B",
             fontSize: "13px",
-          }}> Facebook © 2021</a>
+          }}
+        >
+          {" "}
+          Facebook © 2021
+        </a>
       </div>
     </div>
   );

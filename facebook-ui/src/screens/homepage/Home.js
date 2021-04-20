@@ -5,18 +5,22 @@ import React, { Component } from "react";
 import HiddenForm from "./components/right/components/HiddenForm";
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    const url = new URL(window.location.href);
+    this.state = {
+      user_id: url.searchParams.get("user_id")
+    };
+    console.log(this.state.user_id);
   }
 
   render() {
     return (
       <div className="body_homepage">
-        <Header />
+        <Header user_id={this.state.user_id} />
         <div className="content_home">
-          <Left />
-          <Right />
+          <Left user_id={this.state.user_id} />
+          <Right user_id={this.state.user_id} />
         </div>
       </div>
     );

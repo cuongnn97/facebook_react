@@ -113,7 +113,7 @@ class Post extends React.Component {
                   fontSize: "15px",
                 }}
               >
-                <b>{this.props.post.user_id}</b>
+                <b>{this.props.post.username}</b>
               </p>
               <p
                 style={{

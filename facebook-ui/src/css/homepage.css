@@ -280,6 +280,11 @@
   margin-bottom: 2%;
   text-align: left;
 }
+.comment_line span {
+  float: left;
+  margin-left: 3%;
+  font-weight: bold;
+}
 
 .comment_child {
   margin-left: 10%;
@@ -290,6 +295,13 @@
   margin-bottom: 2%;
   text-align: left;
 }
+
+.comment_child span {
+  float: left;
+  margin-left: 3%;
+  font-weight: bold;
+}
+
 div[class*="reply_field"] {
   margin-left: 10%;
   width: 80%;

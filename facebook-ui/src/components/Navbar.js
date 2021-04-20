@@ -14,20 +14,34 @@ const Navbar = () => {
 
   function handleClick() {
     localStorage.clear();
-    window.location.reload();
+    window.location.href = "/";
+  }
+
+  function backToHomepage() {
+    window.location.href = "/";
   }
 
   return (
     <nav className="navbar">
-      <img src={facebooklogo} width="40px" alt="Logo" />
-      <input className="search-bar" type="text" placeholder="Tìm kiếm trên Facebook" style={{
-        marginLeft: '10px',
-        width: '15%',
-        height: '250%',
-        borderRadius: '15px',
-        backgroundColor: '#f0f2f5',
-        border: '0px'
-      }} />
+      <img
+        onClick={(e) => backToHomepage()}
+        src={facebooklogo}
+        width="40px"
+        alt="Logo"
+      />
+      <input
+        className="search-bar"
+        type="text"
+        placeholder="Tìm kiếm trên Facebook"
+        style={{
+          marginLeft: "10px",
+          width: "15%",
+          height: "250%",
+          borderRadius: "15px",
+          backgroundColor: "#f0f2f5",
+          border: "0px",
+        }}
+      />
       <div className="middle-links">
         <div className="middle-button">
           <img src={icon_home} width="30%" alt="Logo" />
@@ -45,15 +59,24 @@ const Navbar = () => {
       <div className="links">
         <div className="right_button">
           <button className="icon_right" type="submit">
-            <img src={avatar} width="100%" alt="Logo" style={{
-              backgroundColor: 'white'
-            }}/>
+            <img
+              src={avatar}
+              width="100%"
+              alt="Logo"
+              style={{
+                backgroundColor: "white",
+              }}
+            />
           </button>
-          <span style={{
-            marginRight: '15px',
-            fontWeight: 'bold',
-            height: '100%',
-          }}>Cuong</span>
+          <span
+            style={{
+              marginRight: "15px",
+              fontWeight: "bold",
+              height: "100%",
+            }}
+          >
+            {localStorage.getItem("username")}
+          </span>
           <button className="icon_right" type="submit">
             <img src={icon_plus} width="80%" alt="Logo" />
           </button>
@@ -63,7 +86,11 @@ const Navbar = () => {
           <button className="icon_right" type="submit">
             <img src={icon_bell} width="80%" alt="Logo" />
           </button>
-          <button onClick={(e) => handleClick()} className="icon_right" type="submit">
+          <button
+            onClick={(e) => handleClick()}
+            className="icon_right"
+            type="submit"
+          >
             <img src={icon_arrow} width="80%" alt="Logo" />
           </button>
         </div>

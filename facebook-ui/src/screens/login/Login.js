@@ -30,9 +30,6 @@ class Login extends React.Component {
             localStorage.setItem("user_id", obj.id);
             window.location.reload();
             break;
-          } else{
-            alert("Wrong username or password");
-            break;
           }
         }
       }
@@ -91,7 +88,7 @@ class Login extends React.Component {
                 <input
                   onChange={this.handleChange}
                   value={this.state.value}
-                  name="password" type="text"
+                  name="password" type="password"
                   placeholder="Mật khẩu" />
               </div>
               <button class="login_button" onClick={(e) => this.handleClick()}>

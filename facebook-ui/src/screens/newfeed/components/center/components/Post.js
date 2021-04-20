@@ -19,6 +19,7 @@ class Post extends React.Component {
       create_time: date,
       content: "",
       user_id: "1",
+      username: '',
       post_id: "",
       parent_id: "0",
       replyField: false,
@@ -36,6 +37,7 @@ class Post extends React.Component {
     this.setState({ content: event.target.value });
     this.setState({ post_id: id });
     this.setState({ parent_id: parent_id });
+    this.setState({ username: localStorage.getItem("username")});
   };
 
   modifyTask = (event) => {
@@ -72,12 +74,10 @@ class Post extends React.Component {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(
-          {
-            user_id: "1",
-            post_id: post_id
-          }
-        ),
+        body: JSON.stringify({
+          user_id: localStorage.getItem("user_id"),
+          post_id: post_id,
+        }),
       }).then(function (response) {
         return response.json();
       });
@@ -89,6 +89,10 @@ class Post extends React.Component {
     function countComments(data, id) {
       const getCount = data.filter((comment) => comment.post_id == id).length;
       return getCount;
+    }
+
+    function backToHomepage(id) {
+      window.location.href = "/homepage?user_id=" + id;
     }
 
     return (
@@ -108,14 +112,17 @@ class Post extends React.Component {
                 alt="submit"
               />
             </div>
-            <div className="user_post">
+            <div
+              onClick={(e) => backToHomepage(this.props.post.user_id)}
+              className="user_post"
+            >
               <p
                 style={{
                   color: "#050505",
                   fontSize: "15px",
                 }}
               >
-                <b>{this.props.post.user_id}</b>
+                <b>{this.props.post.username}</b>
               </p>
               <p
                 style={{
