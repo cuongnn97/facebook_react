@@ -163,6 +163,13 @@
   width: 33%;
   border-radius: 10px;
 }
+.live_video_liked {
+  height: 100%;
+  float: left;
+  width: 33%;
+  border-radius: 10px;
+  background-color: blue;
+}
 .picture_video {
   height: 100%;
   float: left;
@@ -179,6 +186,12 @@
   background-color: #eeeeee;
   cursor: pointer;
 }
+
+.live_video_liked:hover {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
 .picture_video:hover {
   background-color: #eeeeee;
   cursor: pointer;

@@ -7,6 +7,7 @@ const Center = () => {
 
   const { data: posts } = GetData("http://localhost:8000/posts");
   const { data: comments } = GetData("http://localhost:8000/comments");
+  const { data: reactions } = GetData("http://localhost:8000/reactions");
 
   function sortByParentId(sortList) {
     if (sortList != null) {
@@ -27,16 +28,19 @@ const Center = () => {
     }
   }
 
+
   return (
     <div className="content_center">
       <Story />
       <NewPost />
       {
         (posts,
-        comments && (
+        comments,
+        reactions && (
           <Posts
             posts={sortByDate(posts)}
             comments={sortByParentId(comments)}
+            reactions={reactions}
           />
         ))
       }

@@ -5,6 +5,7 @@ import Posts from "./components/Posts";
 const Right = () => {
   const { data: posts } = GetData("http://localhost:8000/posts");
   const { data: comments } = GetData("http://localhost:8000/comments");
+  const { data: reactions } = GetData("http://localhost:8000/reactions");
 
   function sortByParentId(sortList) {
     if (sortList != null) {
@@ -30,12 +31,14 @@ const Right = () => {
       <NewPost />
       {
         (posts,
-        comments && (
+        comments,
+        reactions && (
           <Posts
             posts={sortByDate(
               posts.filter((post) => post.user_id === "Cuong Nguyen Nhat")
             )}
             comments={sortByParentId(comments)}
+            reactions={reactions}
           />
         ))
       }
