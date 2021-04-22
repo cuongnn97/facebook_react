@@ -99,3 +99,69 @@
   text-align: center;
   height: 1px;
 }
+
+.register_form {
+  background-color: white;
+  position: fixed;
+  z-index: 3;
+  width: 25%;
+  height: 50%;
+  left: 40%;
+  top: 25%;
+  border-radius: 10px;
+  text-align: left;
+}
+
+
+._52lq {
+  color: #1c1e21;
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 0;
+  font-weight: 600;
+  width: 400px;
+  height: 38px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+._52lr {
+  color: #606770;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  width: 400px;
+  height: 24px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+._8fgl {
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #dadde1;
+  box-sizing: border-box;
+  padding: 16px;
+  position: relative;
+  width: 425px;
+
+}
+
+._58mv {
+  color: #777;
+  font-size: 11px;
+  width: 425px;
+  padding-right: 50px;
+}
+
+._8fgl .positive.ui.button {
+  width: 194px;
+  height: 36px;
+  font-size: 15px;
+
+}
+._8fgl input {
+  width: 30rem;
+}

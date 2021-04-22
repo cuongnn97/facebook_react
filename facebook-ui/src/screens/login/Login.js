@@ -4,6 +4,7 @@ import new_user from "./images/new_user.png";
 
 import { Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import HiddenForm from "./components/HiddenForm";
 
 class Login extends React.Component {
   constructor(props) {
@@ -11,14 +12,19 @@ class Login extends React.Component {
     this.state = {
       username: "",
       password: "",
+      showHideForm: false,
     };
+    this.hideComponent = this.hideComponent.bind(this);
+  }
+
+  hideComponent() {
+    this.setState({ showHideForm: !this.state.showHideForm });
   }
 
   handleClick = (event) => {
     fetch("http://localhost:8000/users/")
       .then((response) => response.json())
-      .then((data) =>
-      {
+      .then((data) => {
         for (var i = 0, l = data.length; i < l; i++) {
           var obj = data[i];
           if (
@@ -32,8 +38,7 @@ class Login extends React.Component {
             break;
           }
         }
-      }
-      );
+      });
   };
 
   handleChange = (event) => {
@@ -41,73 +46,86 @@ class Login extends React.Component {
   };
 
   render() {
+    const { showHideForm } = this.state;
     return (
-      <div className="container">
-        <div className="left-half">
-          <div className="content-left">
-            <img
-              src={facebook}
-              style={{
-                width: "200px",
-                paddingTop: "100px",
-                marginLeft: "-80px",
-              }}
-            />
-            <p className="p1">Đăng nhập gần đây</p>
-            <p className="p2">Nhấp vào ảnh của bạn hoặc thêm tài khoản.</p>
-            <div className="ui-link-card">
-              <div className="card">
-                <div className="image">
-                  <img src={avatar} width="160rem" height="160rem" />
-                  <div className="content">
-                    <div className="header">Cuong</div>
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="image">
-                  <img src={new_user} width="160rem" height="160rem" />
-                  <div className="content">
-                    <div className="header2">Thêm tài khoản</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="right-half">
-          <div className="content-right">
-            <div className="login_form">
-              <div className="ui-input">
-                <input
-                  onChange={this.handleChange}
-                  value={this.state.value}
-                  name="username" type="text"
-                  placeholder="Email hoặc số điện thoại" />
-
-                <input
-                  onChange={this.handleChange}
-                  value={this.state.value}
-                  name="password" type="password"
-                  placeholder="Mật khẩu" />
-              </div>
-              <button class="login_button" onClick={(e) => this.handleClick()}>
-                Đăng nhập
-              </button>
-              <a
-                href="#"
+      <div>
+        <div className="container">
+          <div className="left-half">
+            <div className="content-left">
+              <img
+                src={facebook}
                 style={{
-                  color: "#1877f2",
-                  fontSize: "14px",
+                  width: "200px",
+                  paddingTop: "100px",
+                  marginLeft: "-80px",
                 }}
-              >
-                Quên mật khẩu?
-              </a>
-              <div className="_8icz"></div>
-              <button className="positive ui button">Tạo tài khoản mới</button>
+              />
+              <p className="p1">Đăng nhập gần đây</p>
+              <p className="p2">Nhấp vào ảnh của bạn hoặc thêm tài khoản.</p>
+              <div className="ui-link-card">
+                <div className="card">
+                  <div className="image">
+                    <img src={avatar} width="160rem" height="160rem" />
+                    <div className="content">
+                      <div className="header">Cuong</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="image">
+                    <img src={new_user} width="160rem" height="160rem" />
+                    <div className="content">
+                      <div className="header2">Thêm tài khoản</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="right-half">
+            <div className="content-right">
+              <div className="login_form">
+                <div className="ui-input">
+                  <input
+                    onChange={this.handleChange}
+                    value={this.state.value}
+                    name="username"
+                    type="text"
+                    placeholder="Email hoặc số điện thoại"
+                  />
+
+                  <input
+                    onChange={this.handleChange}
+                    value={this.state.value}
+                    name="password"
+                    type="password"
+                    placeholder="Mật khẩu"
+                  />
+                </div>
+                <button
+                  class="login_button"
+                  onClick={(e) => this.handleClick()}
+                >
+                  Đăng nhập
+                </button>
+                <a
+                  href="#"
+                  style={{
+                    color: "#1877f2",
+                    fontSize: "14px",
+                  }}
+                >
+                  Quên mật khẩu?
+                </a>
+                <div className="_8icz"></div>
+                <button onClick={() => this.hideComponent()} className="positive ui button">
+                  Tạo tài khoản mới
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        {showHideForm && <HiddenForm />}
       </div>
     );
   }

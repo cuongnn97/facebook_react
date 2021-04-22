@@ -69,8 +69,8 @@
       "create_time": "20/4/2021",
       "content": "abc",
       "user_id": "1",
-      "username": "cuong",
       "post_id": 1,
+      "username": "tung",
       "parent_id": "0",
       "replyField": false,
       "reactions": false,
@@ -78,10 +78,10 @@
     },
     {
       "create_time": "20/4/2021",
-      "content": "aaaaa",
-      "user_id": "3",
-      "username": "tung",
+      "content": "abc",
+      "user_id": "1",
       "post_id": 1,
+      "username": "tung",
       "parent_id": 1,
       "replyField": true,
       "reactions": false,
@@ -89,47 +89,14 @@
     },
     {
       "create_time": "20/4/2021",
-      "content": "new comment",
+      "content": "aaaaaa",
       "user_id": "1",
-      "username": "cuong",
       "post_id": 1,
+      "username": "tung",
       "parent_id": 1,
       "replyField": true,
       "reactions": false,
       "id": 3
-    },
-    {
-      "create_time": "20/4/2021",
-      "content": "abc",
-      "user_id": "1",
-      "username": "cuong",
-      "post_id": 7,
-      "parent_id": "0",
-      "replyField": false,
-      "reactions": false,
-      "id": 4
-    },
-    {
-      "create_time": "20/4/2021",
-      "content": "abc",
-      "user_id": "1",
-      "post_id": 7,
-      "username": "cuong",
-      "parent_id": 4,
-      "replyField": true,
-      "reactions": false,
-      "id": 5
-    },
-    {
-      "create_time": "20/4/2021",
-      "content": "abc",
-      "user_id": "1",
-      "post_id": 7,
-      "username": "cuong",
-      "parent_id": 4,
-      "replyField": true,
-      "reactions": false,
-      "id": 6
     }
   ],
   "user_relationship": [
@@ -167,6 +134,11 @@
       "username": "tung",
       "password": "tung",
       "id": 3
+    },
+    {
+      "username": "haha",
+      "password": "haha",
+      "id": 4
     }
   ],
   "reactions": [
@@ -189,6 +161,11 @@
       "user_id": "3",
       "post_id": 7,
       "id": 8
+    },
+    {
+      "user_id": "3",
+      "post_id": 1,
+      "id": 9
     }
   ]
 }
