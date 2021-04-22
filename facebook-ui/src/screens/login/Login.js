@@ -3,6 +3,7 @@ import avatar from "./images/avatar.jpg";
 import new_user from "./images/new_user.png";
 
 import { Redirect } from "react-router-dom";
+import ReactDOM from "react-dom";
 import React, { Component } from "react";
 import HiddenForm from "./components/HiddenForm";
 
@@ -17,8 +18,22 @@ class Login extends React.Component {
     this.hideComponent = this.hideComponent.bind(this);
   }
 
+  showComponent = (event) => {
+    const node = ReactDOM.findDOMNode(this);
+    const child = node.querySelector(".container");
+    child.style.opacity = "1";
+    this.setState({ showHideForm: !this.state.showHideForm });
+  };
+
   hideComponent() {
     this.setState({ showHideForm: !this.state.showHideForm });
+    const node = ReactDOM.findDOMNode(this);
+    const child = node.querySelector(".container");
+    if (this.state.showHideForm) {
+      child.style.opacity = "1";
+    } else {
+      child.style.opacity = "0.5";
+    }
   }
 
   handleClick = (event) => {
@@ -118,14 +133,17 @@ class Login extends React.Component {
                   Quên mật khẩu?
                 </a>
                 <div className="_8icz"></div>
-                <button onClick={() => this.hideComponent()} className="positive ui button">
+                <button
+                  onClick={() => this.hideComponent()}
+                  className="positive ui button"
+                >
                   Tạo tài khoản mới
                 </button>
               </div>
             </div>
           </div>
         </div>
-        {showHideForm && <HiddenForm />}
+        {showHideForm && <HiddenForm showComponent={this.showComponent} />}
       </div>
     );
   }
