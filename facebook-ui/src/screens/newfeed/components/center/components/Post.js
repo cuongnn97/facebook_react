@@ -19,7 +19,7 @@ class Post extends React.Component {
       create_time: date,
       content: "",
       user_id: "1",
-      username: '',
+      username: "",
       post_id: "",
       parent_id: "0",
       replyField: false,
@@ -37,7 +37,7 @@ class Post extends React.Component {
     this.setState({ content: event.target.value });
     this.setState({ post_id: id });
     this.setState({ parent_id: parent_id });
-    this.setState({ username: localStorage.getItem("username")});
+    this.setState({ username: localStorage.getItem("username") });
   };
 
   modifyTask = (event) => {
@@ -57,8 +57,21 @@ class Post extends React.Component {
     this.setState({ replyField: !this.state.replyField });
   };
 
-  reactionAction = (event, reaction,post_id) => {
-    if(reaction.length != 0){
+  onCancel = (event, id) => {
+    fetch("http://localhost:8000/posts/" + id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then(function (response) {
+      return response.json();
+    });
+    window.location.reload();
+  };
+
+  reactionAction = (event, reaction, post_id) => {
+    if (reaction.length != 0) {
       fetch("http://localhost:8000/reactions/" + reaction[0].id, {
         method: "DELETE",
         headers: {
@@ -134,18 +147,33 @@ class Post extends React.Component {
                 {this.props.post.create_time}
               </p>
             </div>
-            <div className="small_icon_post">
+            <div
+              className={
+                this.props.post.user_id != localStorage.getItem("user_id")
+                  ? "small_icon_post_hidden"
+                  : "small_icon_post"
+              }
+            >
               <img
+                onClick={(e) => {
+                  if (
+                    window.confirm("Are you sure want to delete this post?")
+                  )
+                    this.onCancel(e, this.props.post.id);
+                }}
                 style={{
                   borderRadius: "50%",
                   marginLeft: "5px",
                   backgroundColor: "white",
                   marginTop: "10px",
                 }}
-                src={icon_more}
+                src={
+                  "https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
+                }
                 width="50%"
                 alt="submit"
               />
+
             </div>
           </div>
           <br />

@@ -28,7 +28,7 @@ const Right = (props) => {
 
   return (
     <div className="right_content">
-      <NewPost />
+      <NewPost showComponent={props.showComponent} />
       {
         (posts,
         comments,

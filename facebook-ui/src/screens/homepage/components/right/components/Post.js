@@ -57,6 +57,19 @@ class Post extends React.Component {
     this.setState({ replyField: !this.state.replyField });
   };
 
+  onCancel = (event, id) => {
+    fetch("http://localhost:8000/posts/" + id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then(function (response) {
+      return response.json();
+    });
+    window.location.reload();
+  };
+
   reactionAction = (event, reaction, post_id) => {
     if (reaction.length != 0) {
       fetch("http://localhost:8000/reactions/" + reaction[0].id, {
@@ -127,15 +140,29 @@ class Post extends React.Component {
                 {this.props.post.create_time}
               </p>
             </div>
-            <div className="small_icon_post">
+            <div
+              className={
+                this.props.post.user_id != localStorage.getItem("user_id")
+                  ? "small_icon_post_hidden"
+                  : "small_icon_post"
+              }
+            >
               <img
+                onClick={(e) => {
+                  if (
+                    window.confirm("Are you sure you wish to delete this item?")
+                  )
+                    this.onCancel(e, this.props.post.id);
+                }}
                 style={{
                   borderRadius: "50%",
                   marginLeft: "5px",
                   backgroundColor: "white",
                   marginTop: "10px",
                 }}
-                src={icon_more}
+                src={
+                  "https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
+                }
                 width="50%"
                 alt="submit"
               />
@@ -257,7 +284,7 @@ class Post extends React.Component {
               </p>
             </div>
           </div>
-          <br/>
+          <br />
 
           <div className="comments_post">
             {this.props.comments

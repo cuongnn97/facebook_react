@@ -38,6 +38,7 @@ class HiddenForm extends React.Component {
       return response.json();
     });
     event.preventDefault();
+    this.closeForm();
   };
 
   render() {
