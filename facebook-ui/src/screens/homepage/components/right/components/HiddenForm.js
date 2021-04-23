@@ -69,8 +69,7 @@ class HiddenForm extends React.Component {
             <div className="_52lp">
               <div
                 className="_52lq"
-                style={{ textAlign: "center", fontSize: "20px" }}
-              >
+                style={{ textAlign: "center", fontSize: "20px" }}>
                 Tạo bài viết
               </div>
               <br />
@@ -84,8 +83,7 @@ class HiddenForm extends React.Component {
                 placeholder="Cuong ơi bạn đang nghĩ gì thế "
                 value={this.state.value}
                 name="content"
-                onChange={this.handleChange}
-              />
+                onChange={this.handleChange}/>
             </div>
             <button
               style={{
@@ -93,8 +91,7 @@ class HiddenForm extends React.Component {
                 marginLeft: "3%",
               }}
               type="submit"
-              className="positive ui button"
-            >
+              className="positive ui button">
               Đăng
             </button>
           </form>

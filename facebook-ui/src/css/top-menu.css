@@ -72,3 +72,85 @@
   cursor: pointer;
   background-color: rgb(190, 186, 186);
 }
+
+.logout_form {
+  position: fixed;
+  top: 4rem;
+  right: 25px;
+  height: 450px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  background-color: white;
+  width: 25rem;
+  border-radius: 10px;
+}
+.content_messenger {
+  height: 72px;
+  margin-top: 10px;
+}
+.avatar_mess_logout {
+  float: left;
+  width: 18%;
+}
+.content_mess {
+  float: left;
+  width: 70%;
+  margin-top: 5px;
+}
+.content_homepage_logout {
+  margin-left: 10px;
+}
+.icon_plus {
+  width: 10%;
+  height: 36px;
+  text-align: center;
+  margin-left: 10px;
+  background-color: #e4e6eb;
+  border-radius: 50%;
+  float: left;
+  margin-top: 5px;
+}
+
+.icon_plus img {
+  margin-top: 3px;
+}
+.content_plus {
+  float: left;
+  width: 80%;
+  margin-left: 10px;
+}
+.icon_setting_logout {
+  width: 10%;
+  text-align: center;
+  margin-left: 5px;
+  background-color: #e4e6eb;
+  border-radius: 50%;
+  float: left;
+}
+
+.icon_setting_logout img{
+  margin-top: 5px;
+}
+
+.content_setting_logout {
+  margin-top: 5px;
+  float: left;
+  width: 70%;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.small_icon_setting {
+  float: left;
+  width: 10%;
+  padding: 5px;
+}
+.more_option_logout{
+  margin-left: 1rem;
+}
+
+.logout_option:hover {
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  cursor: pointer;
+}
