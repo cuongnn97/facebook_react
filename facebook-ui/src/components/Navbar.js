@@ -9,7 +9,7 @@ import icon_arrow from './images/icon_arrow.png'
 import facebooklogo from './images/facebook_logo.png'
 import avatar from './images/avatar.jpg'
 import LogoutForm from './LogoutForm'
-import React, { Component } from "react";
+import React from "react";
 
 
 class Navbar extends React.Component {

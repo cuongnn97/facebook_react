@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import avatar from "./images/avatar.jpg";
 import icon_feedback from "./images/icon_feedback.png";
 import icon_settings from "./images/icon_settings.png";
@@ -235,7 +235,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Quyền riêng tư
           </a>{" "}
@@ -245,7 +245,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Điều khoản
           </a>{" "}
@@ -255,7 +255,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Quảng cáo
           </a>{" "}
@@ -265,7 +265,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Lựa chọn quảng cáo
           </a>{" "}
@@ -275,7 +275,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Cookie
           </a>{" "}
@@ -285,7 +285,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Xem thêm
           </a>{" "}
@@ -295,7 +295,7 @@ class LogoutForm extends React.Component {
               color: "#65676B",
               fontSize: "13px",
             }}
-            href="#"
+            href="/"
           >
             Facebook © 2021
           </a>

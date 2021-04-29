@@ -1,8 +1,7 @@
-import icon_more from "../images/icon_more.jpg";
 import icon_like from "../images/icon_like.jpg";
 import icon_comment from "../images/icon_comment.png";
 import icon_share from "../images/icon_share.jpg";
-import React, { Component } from "react";
+import React from "react";
 import Comments from "./Comments";
 
 class Post extends React.Component {
@@ -71,7 +70,7 @@ class Post extends React.Component {
   };
 
   reactionAction = (event, reaction, post_id) => {
-    if (reaction.length != 0) {
+    if (reaction.length !== 0) {
       fetch("http://localhost:8000/reactions/" + reaction[0].id, {
         method: "DELETE",
         headers: {
@@ -100,7 +99,7 @@ class Post extends React.Component {
 
   render() {
     function countComments(data, id) {
-      const getCount = data.filter((comment) => comment.post_id == id).length;
+      const getCount = data.filter((comment) => comment.post_id === id).length;
       return getCount;
     }
 
@@ -142,7 +141,7 @@ class Post extends React.Component {
             </div>
             <div
               className={
-                this.props.post.user_id != localStorage.getItem("user_id")
+                this.props.post.user_id !== localStorage.getItem("user_id")
                   ? "small_icon_post_hidden"
                   : "small_icon_post"
               }
@@ -213,7 +212,7 @@ class Post extends React.Component {
           <div className="post_action">
             <div
               className={
-                this.props.reactions.length != 0
+                this.props.reactions.length !== 0
                   ? "live_video_liked"
                   : "live_video"
               }
@@ -290,8 +289,8 @@ class Post extends React.Component {
             {this.props.comments
               .filter(
                 (comment_parent) =>
-                  comment_parent.post_id == this.props.post.id &&
-                  comment_parent.parent_id == "0"
+                  comment_parent.post_id === this.props.post.id &&
+                  comment_parent.parent_id === "0"
               )
               .map((comment_parent) => (
                 <div>
@@ -304,7 +303,7 @@ class Post extends React.Component {
                   {this.props.comments
                     .filter(
                       (comment) =>
-                        parseInt(comment.parent_id) == comment_parent.id
+                        parseInt(comment.parent_id) === comment_parent.id
                     )
                     .map((comment) => (
                       <Comments comment={comment} />

@@ -7,7 +7,7 @@ import icon_find from './images/icon_find.jpg'
 import icon_eye from './images/icon_eye.png'
 import icon_edit from './images/icon_edit.png'
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 const Header = (props) => {

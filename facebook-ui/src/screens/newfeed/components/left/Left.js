@@ -183,6 +183,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           Quyền riêng tư -{" "}
         </a>
@@ -191,6 +192,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           {" "}
           Điều khoản -
@@ -200,6 +202,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           Quảng cáo -
         </a>
@@ -208,6 +211,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           {" "}
           Lựa chọn quảng cáo -{" "}
@@ -217,6 +221,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           Cookie -
         </a>
@@ -225,6 +230,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           Xem thêm -{" "}
         </a>
@@ -233,6 +239,7 @@ const Left = () => {
             color: "#65676B",
             fontSize: "13px",
           }}
+          href="/"
         >
           {" "}
           Facebook © 2021

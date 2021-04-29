@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 class HiddenForm extends React.Component {
@@ -65,6 +65,7 @@ class HiddenForm extends React.Component {
                 right: "10px",
                 height: "24px",
               }}
+              alt="closeForm"
             ></img>
             <div className="_52lp">
               <div

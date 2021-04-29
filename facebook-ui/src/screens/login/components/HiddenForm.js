@@ -1,5 +1,4 @@
-import { Redirect } from "react-router-dom";
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 class HiddenForm extends React.Component {
@@ -58,6 +57,7 @@ class HiddenForm extends React.Component {
                 right: "10px",
                 height: "24px",
               }}
+              alt="closeForm"
             ></img>
             <div className="_52lp">
               <div className="_52lq">Đăng ký</div>
@@ -85,16 +85,16 @@ class HiddenForm extends React.Component {
                 <br /> <br />
                 <p className="_58mv">
                   Bằng cách nhấp vào Đăng ký, bạn đồng ý với{" "}
-                  <a href="#" id="terms-link" target="_blank" rel="nofollow">
+                  <a href="/" id="terms-link" target="_blank" rel="nofollow">
                     Điều khoản
                   </a>
                   ,{" "}
-                  <a href="#" id="privacy-link" target="_blank" rel="nofollow">
+                  <a href="/" id="privacy-link" target="_blank" rel="nofollow">
                     Chính sách dữ liệu
                   </a>{" "}
                   và{" "}
                   <a
-                    href="#"
+                    href="/"
                     id="cookie-use-link"
                     target="_blank"
                     rel="nofollow"

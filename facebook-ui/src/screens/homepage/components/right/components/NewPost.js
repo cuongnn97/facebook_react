@@ -2,8 +2,6 @@ import red_camera from '../images/red_camera.png'
 import icon_picture from '../images/icon_picture.png'
 import icon_emotion from '../images/icon_emotion.jpg'
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import HiddenForm from './HiddenForm';
 class NewPost extends Component {
   constructor(props) {
     super(props);

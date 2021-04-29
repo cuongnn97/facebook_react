@@ -2,9 +2,8 @@ import facebook from "./images/facebook.svg";
 import avatar from "./images/avatar.jpg";
 import new_user from "./images/new_user.png";
 
-import { Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
-import React, { Component } from "react";
+import React from "react";
 import HiddenForm from "./components/HiddenForm";
 
 class Login extends React.Component {
@@ -43,8 +42,8 @@ class Login extends React.Component {
         for (var i = 0, l = data.length; i < l; i++) {
           var obj = data[i];
           if (
-            obj.username == this.state.username &&
-            obj.password == this.state.password
+            obj.username === this.state.username &&
+            obj.password === this.state.password
           ) {
             localStorage.setItem("username", this.state.username);
             localStorage.setItem("password", this.state.password);
@@ -74,13 +73,14 @@ class Login extends React.Component {
                   paddingTop: "100px",
                   marginLeft: "-80px",
                 }}
+                alt="facebookAvatar"
               />
               <p className="p1">Đăng nhập gần đây</p>
               <p className="p2">Nhấp vào ảnh của bạn hoặc thêm tài khoản.</p>
               <div className="ui-link-card">
                 <div className="card">
                   <div className="image">
-                    <img src={avatar} width="160rem" height="160rem" />
+                    <img src={avatar} width="160rem" height="160rem" alt="facebookAvatar" />
                     <div className="content">
                       <div className="header">Cuong</div>
                     </div>
@@ -88,7 +88,7 @@ class Login extends React.Component {
                 </div>
                 <div className="card">
                   <div className="image">
-                    <img src={new_user} width="160rem" height="160rem" />
+                    <img src={new_user} alt="facebookAvatar" width="160rem" height="160rem" />
                     <div className="content">
                       <div className="header2">Thêm tài khoản</div>
                     </div>
@@ -118,13 +118,13 @@ class Login extends React.Component {
                   />
                 </div>
                 <button
-                  class="login_button"
+                  className="login_button"
                   onClick={(e) => this.handleClick()}
                 >
                   Đăng nhập
                 </button>
                 <a
-                  href="#"
+                  href="/"
                   style={{
                     color: "#1877f2",
                     fontSize: "14px",

@@ -97,6 +97,17 @@
       "replyField": true,
       "reactions": false,
       "id": 3
+    },
+    {
+      "create_time": "29/4/2021",
+      "content": "new comment",
+      "user_id": "1",
+      "username": "",
+      "post_id": 1,
+      "parent_id": "0",
+      "replyField": false,
+      "reactions": false,
+      "id": 4
     }
   ],
   "user_relationship": [
@@ -161,11 +172,6 @@
       "user_id": "3",
       "post_id": 1,
       "id": 9
-    },
-    {
-      "user_id": "1",
-      "post_id": 1,
-      "id": 10
     },
     {
       "user_id": "1",

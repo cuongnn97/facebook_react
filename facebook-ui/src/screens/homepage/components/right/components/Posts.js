@@ -1,9 +1,4 @@
-import icon_more from '../images/icon_more.jpg'
-import icon_like from '../images/icon_like.jpg'
-import icon_comment from '../images/icon_comment.png'
-import icon_share from '../images/icon_share.jpg'
-import React, {Component} from 'react';
-import Comments from './Comments';
+import React from 'react';
 import Post from "./Post";
 
 class Posts extends React.Component {
@@ -18,7 +13,7 @@ class Posts extends React.Component {
       var reactions = [];
       for (var i = 0, l = data.length; i < l; i++) {
         var obj = data[i];
-        if (obj.user_id == localStorage.getItem('user_id') && obj.post_id == post_id) {
+        if (obj.user_id === localStorage.getItem('user_id') && obj.post_id === post_id) {
           reactions.push(obj);
         }
       }
@@ -28,9 +23,7 @@ class Posts extends React.Component {
     return (
       <div>
         {this.props.posts.map(
-          (post) => (
-            post,
-            this.props.comments && (
+          (post) => (this.props.comments && (
               <Post
                 reactions={getReactions(this.props.reactions, post.id)}
                 post={post}
@@ -40,7 +33,7 @@ class Posts extends React.Component {
           )
         )}
       </div>
-    );
+    )
   }
 }
 

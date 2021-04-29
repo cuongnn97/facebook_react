@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 class Comments extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Comments extends React.Component {
     }
     let nameClass = "";
     if (
-      this.props.comment.parent_id != "0"
+      this.props.comment.parent_id !== "0"
         ? (nameClass = "comment_child")
         : (nameClass = "comment_line")
     );
