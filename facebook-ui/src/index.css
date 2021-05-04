@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css');
-@import url('css/top-menu.css');
-@import url('css/homepage.css');
-@import url('css/newfeed.css');
-@import url('css/login.css');
+@import url('assets/styles/top-menu.css');
+@import url('assets/styles/homepage.css');
+@import url('assets/styles/newfeed.css');
+@import url('assets/styles/login.css');
 /* base styles */
 * {
   margin: 0;

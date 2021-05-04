@@ -1,7 +1,7 @@
-import Navbar from './components/Navbar';
-import Home from './screens/homepage/Home';
-import Login from './screens/login/Login';
-import Newfeed from "./screens/newfeed/Newfeed";
+import Navbar from './Components/Navbar/index';
+import Home from './Components/Homepage/index';
+import Login from './Components/Login/index';
+import Newfeed from "./Components/Newfeed/index";
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
