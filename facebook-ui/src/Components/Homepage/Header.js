@@ -26,7 +26,7 @@ const Header = (props) => {
           borderRadius: '10px',
           zIndex: '1'
         }}/>
-        <img src={'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/p200x200/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8TYhln&_nc_ht=scontent.fhan3-1.fna&tp=6&oh=33de68a5c667eab64722e821ec219090&oe=60878798'} width="20%" alt="Logo" style={{
+        <img src={'https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-1/p200x200/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=_VSNg5DMUVAAX_TlG2m&_nc_ht=scontent-hkg4-2.xx&tp=6&oh=8ca06f787f3354343b15c7289a83d98f&oe=60B6FD98'} width="20%" alt="Logo" style={{
           borderRadius: '50%',
           zIndex: '2',
           border: '4px solid white',

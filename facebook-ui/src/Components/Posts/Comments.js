@@ -29,7 +29,7 @@ class Comments extends React.Component {
             borderRadius: "50%",
           }}
           src={
-            "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82"
+            "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/176948940_1247789222307089_9205108023586285197_n.jpg?_nc_cat=1&ccb=1-3&_nc_sid=1eb0c7&_nc_ohc=ZibN5QVQfL4AX81UqXW&_nc_ht=scontent.fhan3-2.fna&tp=27&oh=8230c06ae3d5bc31f8d69f7309040053&oe=60B52A00"
           }
           width="5%"
           alt="submit"

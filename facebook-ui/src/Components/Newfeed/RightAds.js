@@ -8,9 +8,10 @@ const RightAds = () => {
               borderRadius: "5px",
             }}
             src={
-              "https://scontent.fhan4-1.fna.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p160x160/140009112_23846481502960466_4135777804048799215_n.png.jpg?_nc_cat=104&ccb=1-3&_nc_sid=67cdda&_nc_ohc=aKyeN4_tSSQAX-nX-pd&_nc_ht=scontent.fhan4-1.fna&_nc_tp=31&oh=1226161d84ef96be447d037a07df15d1&oe=608708F2"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t45.1600-4/cp0/q75/spS444/p296x100/178178585_23847275081820673_898871790739870734_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=67cdda&_nc_ohc=k55UzTihuqoAX8f4gNa&_nc_ht=scontent-hkg4-1.xx&_nc_tp=31&oh=6c066875346cb68b8a0adc105714c073&oe=60B6B65E"
             }
             width="90%"
+            height="70rem"
             alt="submit"
           />
         </div>
@@ -40,8 +41,9 @@ const RightAds = () => {
               borderRadius: "5px",
             }}
             src={
-              "https://scontent.fhan4-1.fna.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p160x160/140009112_23846481502960466_4135777804048799215_n.png.jpg?_nc_cat=104&ccb=1-3&_nc_sid=67cdda&_nc_ohc=aKyeN4_tSSQAX-nX-pd&_nc_ht=scontent.fhan4-1.fna&_nc_tp=31&oh=1226161d84ef96be447d037a07df15d1&oe=608708F2"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t45.1600-4/cp0/q75/spS444/p296x100/178178585_23847275081820673_898871790739870734_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=67cdda&_nc_ohc=k55UzTihuqoAX8f4gNa&_nc_ht=scontent-hkg4-1.xx&_nc_tp=31&oh=6c066875346cb68b8a0adc105714c073&oe=60B6B65E"
             }
+            height="70rem"
             width="90%"
             alt="submit"
           />

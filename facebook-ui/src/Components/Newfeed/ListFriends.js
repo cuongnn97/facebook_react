@@ -6,7 +6,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
@@ -20,7 +20,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
@@ -34,7 +34,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
@@ -48,7 +48,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
@@ -62,7 +62,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
@@ -76,7 +76,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
@@ -91,7 +91,7 @@ const ListFriends = () => {
         <div className="icon_setting">
           <img
             src={
-              "https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/81344267_2608307102616214_7993361633130840064_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=7206a8&_nc_ohc=bI23duydBMcAX9seIQb&_nc_ht=scontent.fhan3-3.fna&tp=27&oh=ec5542cd171bd3833aa545b21a3d121e&oe=6088A806"
+              "https://scontent-hkg4-1.xx.fbcdn.net/v/t31.18172-1/cp0/c22.0.40.40a/p40x40/14324526_1027046754082850_3608341431960967425_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=5e6t5Kd6WqgAX8aeg0Z&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=36fcff30e81cd54cc39c7a15ab045d94&oe=60B69C4E"
             }
             width="10%"
             alt="submit"
