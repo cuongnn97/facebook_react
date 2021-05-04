@@ -10,7 +10,6 @@ import { useState } from "react";
 const Header = (props) => {
 
   const [username, setUsername] = useState(null);
-  // const { error, isPending, data: blogs } = useFetch('http://localhost:8000/posts')
   function getUserName() {
     fetch("http://localhost:8000/users/"+props.user_id)
       .then((response) => response.json())

@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class HiddenForm extends React.Component {
   constructor(props) {
@@ -8,21 +7,13 @@ class HiddenForm extends React.Component {
       username: "",
       password: "",
     };
-    this.removeItem = this.removeItem.bind(this);
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  closeForm = (event) => {
-    const node = ReactDOM.findDOMNode(this);
-    const child = node.querySelector(".register_form");
-    child.style.visibility = "hidden";
-    this.removeItem();
-  };
-
-  removeItem = () => {
+  closeForm = () => {
     this.props.showComponent();
   };
 
@@ -46,7 +37,7 @@ class HiddenForm extends React.Component {
         <div className="register_form">
           <form onSubmit={this.handleSubmit}>
             <img
-              onClick={(e) => this.closeForm()}
+              onClick={() => this.closeForm()}
               src={
                 "https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
               }

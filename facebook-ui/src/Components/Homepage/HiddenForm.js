@@ -1,51 +1,46 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class HiddenForm extends React.Component {
   constructor(props) {
     super(props);
-    var today = new Date(),
-      date =
+    var today = new Date();
+    this.date =
         today.getDate() +
         "/" +
         (today.getMonth() + 1) +
         "/" +
         today.getFullYear();
     this.state = {
-      create_time: date,
       content: "",
-      user_id: localStorage.getItem("user_id"),
-      username: localStorage.getItem("username"),
     };
-    this.removeItem = this.removeItem.bind(this);
+    this.userId =  localStorage.getItem("user_id");
+    this.username =  localStorage.getItem("username");
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  closeForm = (event) => {
-    const node = ReactDOM.findDOMNode(this);
-    const child = node.querySelector(".hidden_form");
-    child.style.visibility = "hidden";
-    this.removeItem();
-  };
-
-  removeItem = () => {
+  closeForm = () => {
     this.props.showComponent();
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = () => {
+    const newPost = {
+      create_time: this.date,
+      content: this.state.content,
+      user_id: this.userId,
+      username: this.username,
+    }
     fetch("http://localhost:8000/posts/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state),
+      body: JSON.stringify(newPost),
     }).then(function (response) {
-      return response.json();
+      window.location.reload();
     });
-    window.location.reload();
   };
 
   render() {

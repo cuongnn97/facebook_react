@@ -7,66 +7,73 @@ import Comments from "./Comments";
 class Post extends React.Component {
   constructor(props) {
     super(props);
-    var today = new Date(),
-      date =
+    var today = new Date();
+    this.date =
         today.getDate() +
         "/" +
         (today.getMonth() + 1) +
         "/" +
         today.getFullYear();
+    this.localUserId = localStorage.getItem("user_id");
+    this.localUserName = localStorage.getItem("username");
     this.state = {
-      create_time: date,
       content: "",
-      user_id: "1",
-      username: "",
-      post_id: "",
       parent_id: "0",
-      replyField: false,
+      showReplyField: false,
       reactions: false,
     };
   }
 
-  handleChange = (event, id) => {
-    this.setState({ content: event.target.value });
-    this.setState({ post_id: id });
-    this.setState({ parent_id: "0" });
+  handleChange = (event) => {
+    this.setState({
+      content: event.target.value,
+      parent_id: "0"
+    });
   };
 
-  commentChild = (event, id, parent_id) => {
-    this.setState({ content: event.target.value });
-    this.setState({ post_id: id });
-    this.setState({ parent_id: parent_id });
-    this.setState({ username: localStorage.getItem("username") });
+  commentChild = (event, parent_id) => {
+    this.setState({
+      content: event.target.value,
+      parent_id: parent_id
+    });
+
   };
 
-  modifyTask = (event) => {
+  modifyTask = () => {
+    const newComments = {
+      create_time: this.date,
+      content: this.state.content,
+      user_id: this.localUserId,
+      username: this.localUserName,
+      post_id: this.props.post.id,
+      parent_id: this.state.parent_id
+    }
     fetch("http://localhost:8000/comments/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state),
+      body: JSON.stringify(newComments),
     }).then(function (response) {
       return response.json();
     });
     window.location.reload();
   };
 
-  replyField = (event, id) => {
-    this.setState({ replyField: !this.state.replyField });
+  showReplyField = (id) => {
+    this.setState({ showReplyField: !this.state.showReplyField });
   };
 
-  onCancel = (event, id) => {
-    fetch("http://localhost:8000/posts/" + id, {
+  onDelete = () => {
+    fetch("http://localhost:8000/posts/" + this.props.post.id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(this.state),
     }).then(function (response) {
-      return response.json();
+      window.location.reload();
     });
-    window.location.reload();
   };
 
   reactionAction = (event, reaction, post_id) => {
@@ -78,7 +85,7 @@ class Post extends React.Component {
         },
         body: JSON.stringify(this.state),
       }).then(function (response) {
-        return response.json();
+        window.location.reload();
       });
     } else {
       fetch("http://localhost:8000/reactions/", {
@@ -87,25 +94,25 @@ class Post extends React.Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user_id: localStorage.getItem("user_id"),
+          user_id: this.localUserId,
           post_id: post_id,
         }),
       }).then(function (response) {
-        return response.json();
+        window.location.reload();
       });
     }
-    window.location.reload();
   };
 
-  render() {
-    function countComments(data, id) {
-      const getCount = data.filter((comment) => comment.post_id === id).length;
-      return getCount;
-    }
+  countComments() {
+    const getCount = this.props.comments.length;
+    return getCount;
+  }
 
-    function backToHomepage(id) {
-      window.location.href = "/homepage?user_id=" + id;
-    }
+  backToHomepage() {
+    window.location.href = "/homepage?user_id=" + this.props.post.user_id;
+  }
+
+  render() {
 
     return (
       <div>
@@ -125,7 +132,7 @@ class Post extends React.Component {
               />
             </div>
             <div
-              onClick={(e) => backToHomepage(this.props.post.user_id)}
+              onClick={() => this.backToHomepage()}
               className="user_post"
             >
               <p
@@ -148,17 +155,17 @@ class Post extends React.Component {
             </div>
             <div
               className={
-                this.props.post.user_id !== localStorage.getItem("user_id")
+                this.props.post.user_id !== this.localUserId
                   ? "small_icon_post_hidden"
                   : "small_icon_post"
               }
             >
               <img
-                onClick={(e) => {
+                onClick={() => {
                   if (
                     window.confirm("Are you sure want to delete this post?")
                   )
-                    this.onCancel(e, this.props.post.id);
+                    this.onDelete();
                 }}
                 style={{
                   borderRadius: "50%",
@@ -212,7 +219,7 @@ class Post extends React.Component {
                   marginTop: "10px",
                 }}
               >
-                {countComments(this.props.comments, this.props.post.id)} bình
+                {this.countComments()} bình
                 luận
               </p>
             </div>
@@ -303,7 +310,7 @@ class Post extends React.Component {
                 <div>
                   <Comments comment={comment_parent} />
                   <button
-                    onClick={(e) => this.replyField(e, comment_parent.id)}
+                    onClick={() => this.showReplyField()}
                   >
                     Tra loi
                   </button>
@@ -315,11 +322,11 @@ class Post extends React.Component {
                     .map((comment) => (
                       <Comments comment={comment} />
                     ))}
-                  {this.state.replyField && (
+                  {this.state.showReplyField && (
                     <div className={"reply_field_" + comment_parent.id}>
                       <img
                         src={
-                          "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/120420815_3065716766873179_4307096642786528104_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=FOpKfZS8x6kAX8OOoGH&_nc_ht=scontent.fhan3-1.fna&tp=27&oh=335c1a79cf78eacd809cb7365e10457e&oe=6088EE82"
+                          "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.6435-1/cp0/p40x40/176948940_1247789222307089_9205108023586285197_n.jpg?_nc_cat=1&ccb=1-3&_nc_sid=1eb0c7&_nc_ohc=ZibN5QVQfL4AX81UqXW&_nc_ht=scontent.fhan3-2.fna&tp=27&oh=8230c06ae3d5bc31f8d69f7309040053&oe=60B52A00"
                         }
                         style={{
                           width: "6%",
@@ -335,7 +342,6 @@ class Post extends React.Component {
                           onChange={(e) =>
                             this.commentChild(
                               e,
-                              this.props.post.id,
                               comment_parent.id
                             )
                           }
@@ -373,7 +379,7 @@ class Post extends React.Component {
             />
             <form onSubmit={this.modifyTask}>
               <input
-                onChange={(e) => this.handleChange(e, this.props.post.id)}
+                onChange={(e) => this.handleChange(e)}
                 type="text"
                 placeholder="Viết bình luận...."
                 style={{

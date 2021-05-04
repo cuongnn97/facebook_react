@@ -6,18 +6,15 @@ class Comments extends React.Component {
     this.state = {};
   }
 
-
+  backToHomepage() {
+    window.location.href = "/homepage?user_id=" + this.props.comment.user_id;
+  }
 
   render() {
-    function backToHomepage(id) {
-      window.location.href = "/homepage?user_id=" + id;
-    }
-    let nameClass = "";
-    if (
-      this.props.comment.parent_id !== "0"
-        ? (nameClass = "comment_child")
-        : (nameClass = "comment_line")
-    );
+
+    let nameClass = this.props.comment.parent_id !== "0"
+        ?"comment_child"
+        : "comment_line";
 
     return (
       <div className={nameClass}>
@@ -35,7 +32,7 @@ class Comments extends React.Component {
           alt="submit"
         />
         <span className="comment_username"
-          onClick={(e) => backToHomepage(this.props.comment.user_id)}
+          onClick={() => this.backToHomepage()}
         >{this.props.comment.username}</span>
         <div
           style={{

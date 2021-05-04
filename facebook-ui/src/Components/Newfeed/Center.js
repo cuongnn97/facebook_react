@@ -28,7 +28,6 @@ const Center = () => {
     }
   }
 
-
   return (
     <div className="content_center">
       <Story />

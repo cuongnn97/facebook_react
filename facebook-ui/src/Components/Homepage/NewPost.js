@@ -9,7 +9,6 @@ class NewPost extends Component {
       name: "React",
       showHideForm: false,
     };
-    this.showForm = this.showForm.bind(this);
   }
 
   showForm = () => {

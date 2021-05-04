@@ -51,13 +51,6 @@
     },
     {
       "create_time": "22/4/2021",
-      "content": "dece\ncececece",
-      "user_id": "1",
-      "username": "cuong",
-      "id": 9
-    },
-    {
-      "create_time": "22/4/2021",
       "content": "aaaaa",
       "user_id": "1",
       "username": "cuong",
@@ -66,48 +59,22 @@
   ],
   "comments": [
     {
-      "create_time": "20/4/2021",
+      "create_time": "4/5/2021",
       "content": "abc",
       "user_id": "1",
+      "username": "cuong",
       "post_id": 1,
-      "username": "tung",
       "parent_id": "0",
-      "replyField": false,
-      "reactions": false,
       "id": 1
     },
     {
-      "create_time": "20/4/2021",
+      "create_time": "4/5/2021",
       "content": "abc",
       "user_id": "1",
+      "username": "cuong",
       "post_id": 1,
-      "username": "tung",
       "parent_id": 1,
-      "replyField": true,
-      "reactions": false,
       "id": 2
-    },
-    {
-      "create_time": "20/4/2021",
-      "content": "aaaaaa",
-      "user_id": "1",
-      "post_id": 1,
-      "username": "tung",
-      "parent_id": 1,
-      "replyField": true,
-      "reactions": false,
-      "id": 3
-    },
-    {
-      "create_time": "29/4/2021",
-      "content": "new comment",
-      "user_id": "1",
-      "username": "",
-      "post_id": 1,
-      "parent_id": "0",
-      "replyField": false,
-      "reactions": false,
-      "id": 4
     }
   ],
   "user_relationship": [
@@ -169,14 +136,19 @@
       "id": 8
     },
     {
-      "user_id": "3",
-      "post_id": 1,
-      "id": 9
-    },
-    {
       "user_id": "1",
       "post_id": 2,
       "id": 11
+    },
+    {
+      "user_id": "3",
+      "post_id": 1,
+      "id": 13
+    },
+    {
+      "user_id": "1",
+      "post_id": 1,
+      "id": 14
     }
   ]
 }

@@ -2,7 +2,6 @@ import facebook from "../../assets/images/facebook.svg";
 import avatar from "../../assets/images/avatar.jpg";
 import new_user from "../../assets/images/new_user.png";
 
-import ReactDOM from "react-dom";
 import React from "react";
 import HiddenForm from "./HiddenForm";
 
@@ -17,25 +16,15 @@ class Login extends React.Component {
     this.hideComponent = this.hideComponent.bind(this);
   }
 
-  showComponent = (event) => {
-    const node = ReactDOM.findDOMNode(this);
-    const child = node.querySelector(".container");
-    child.style.opacity = "1";
-    this.setState({ showHideForm: !this.state.showHideForm });
+  showComponent = () => {
+    this.setState({ showHideForm: false });
   };
 
   hideComponent() {
     this.setState({ showHideForm: !this.state.showHideForm });
-    const node = ReactDOM.findDOMNode(this);
-    const child = node.querySelector(".container");
-    if (this.state.showHideForm) {
-      child.style.opacity = "1";
-    } else {
-      child.style.opacity = "0.5";
-    }
   }
 
-  handleClick = (event) => {
+  handleClick = () => {
     fetch("http://localhost:8000/users/")
       .then((response) => response.json())
       .then((data) => {
@@ -63,7 +52,7 @@ class Login extends React.Component {
     const { showHideForm } = this.state;
     return (
       <div>
-        <div className="container">
+        <div className="container" style={{opacity: this.state.showHideForm ? '0.5' : '1'}}>
           <div className="left-half">
             <div className="content-left">
               <img
