@@ -116,7 +116,7 @@ class Post extends React.Component {
 
     return (
       <div>
-        <div className="content_post" style={{ width: "93%" }}>
+        <div className="content_post" style={{ width: "100%" }}>
           <div className="post_user">
             <div className="icon_post">
               <img

@@ -52,7 +52,7 @@ class Login extends React.Component {
     const { showHideForm } = this.state;
     return (
       <div>
-        <div className="container" style={{opacity: this.state.showHideForm ? '0.5' : '1'}}>
+        <div className="container" style={{ opacity: this.state.showHideForm ? '0.5' : '1' }}>
           <div className="left-half">
             <div className="content-left">
               <img
