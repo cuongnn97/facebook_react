@@ -307,7 +307,7 @@ class Post extends React.Component {
                   comment_parent.parent_id === "0"
               )
               .map((comment_parent) => (
-                <div>
+                <div key={comment_parent.id}>
                   <Comments comment={comment_parent} />
                   <button
                     onClick={() => this.showReplyField()}
@@ -320,7 +320,9 @@ class Post extends React.Component {
                         parseInt(comment.parent_id) === comment_parent.id
                     )
                     .map((comment) => (
-                      <Comments comment={comment} />
+                      <div key={comment.id}>
+                        <Comments comment={comment} />
+                      </div>
                     ))}
                   {this.state.showReplyField && (
                     <div className={"reply_field_" + comment_parent.id}>

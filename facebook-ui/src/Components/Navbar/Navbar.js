@@ -10,6 +10,7 @@ import facebooklogo from '../../assets/images/facebook_logo.png'
 import avatar from '../../assets/images/avatar.jpg';
 import LogoutForm from '../LogoutForm/index'
 import React from "react";
+import SearchForm from './SearchForm'
 
 
 class Navbar extends React.Component {
@@ -17,7 +18,18 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       showComponent: false,
+      showSearchForm: false,
+      users: []
     };
+    this.usersFromDb = [];
+  }
+  componentDidMount() {
+    fetch('http://localhost:8000/users')
+      .then((response) => response.json())
+      .then(data => {
+        this.setState({ users: data });
+        this.usersFromDb = data;
+      });
   }
 
   handleClick() {
@@ -27,10 +39,42 @@ class Navbar extends React.Component {
   backToHomepage() {
     window.location.href = "/";
   }
+
+  onFocusSearch() {
+    this.setState({ showSearchForm: true });
+  }
+
+  getUsers(e) {
+    let currentList = [];
+    let newList = [];
+    if (e.target.value !== "") {
+      currentList = this.usersFromDb;
+      newList = currentList.filter((item) => {
+        const userName = item.username.toLowerCase();
+        const searchString = e.target.value.toLowerCase();
+        return userName.includes(searchString);
+      });
+    } else {
+      newList = this.usersFromDb;
+    }
+    this.setState({
+      users: newList
+    });
+  }
+
+  onBlurSearch() {
+    if(false){
+      this.setState({ showSearchForm: false });
+    }
+  }
+
+
   render() {
+    const showSearchForm = this.state.showSearchForm;
     return (
       <div>
         <nav className="navbar">
+          {showSearchForm && <SearchForm users = {this.state.users} />}
           <img
             onClick={(e) => this.backToHomepage()}
             src={facebooklogo}
@@ -49,6 +93,9 @@ class Navbar extends React.Component {
               backgroundColor: "#f0f2f5",
               border: "0px",
             }}
+            onChange= {(e) => {this.getUsers(e)}}
+            onFocus={() => {this.onFocusSearch()}}
+            onBlur={() => { this.onBlurSearch() }}
           />
           <div className="middle-links">
             <div className="middle-button">

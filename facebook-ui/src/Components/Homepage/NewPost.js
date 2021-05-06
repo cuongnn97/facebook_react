@@ -11,12 +11,8 @@ class NewPost extends Component {
     };
   }
 
-  showForm = () => {
-    this.props.showComponent();
-  };
-
   showComponent() {
-    this.showForm();
+    this.props.showComponent();
   }
 
   render() {

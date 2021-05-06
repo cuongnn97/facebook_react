@@ -3,7 +3,6 @@ import icon_more from '../../assets/images/icon_more.jpg'
 import icon_find from '../../assets/images/icon_find.jpg'
 import icon_eye from '../../assets/images/icon_eye.png'
 import icon_edit from '../../assets/images/icon_edit.png'
-import { Link } from 'react-router-dom';
 import { useState } from "react";
 
 
@@ -35,7 +34,7 @@ const Header = (props) => {
       </div>
       <div className="user_name">
         <h1><b>{getUserName()}</b></h1>
-        <Link href="/a"><b>Thêm tiểu sử</b></Link>
+        <a href="/"><b>Thêm tiểu sử</b></a>
       </div>
       <div className="menu_home">
         <div className="menu_home_left">

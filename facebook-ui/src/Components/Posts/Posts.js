@@ -27,8 +27,8 @@ class Posts extends React.Component {
     return (
       <div>
         {this.props.posts.map((post) => (
-          (post,this.filterCommentByPostId(post.id) && <Post reactions={this.getReactions(post.id)} post={post} comments={this.filterCommentByPostId(post.id)}/>)
-        ))}
+          (post, this.filterCommentByPostId(post.id) && <div key={post.id}><Post reactions={this.getReactions(post.id)} post={post} comments={this.filterCommentByPostId(post.id)}/></div>)
+         ) ) }
       </div>
     );
   }
