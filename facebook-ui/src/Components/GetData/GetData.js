@@ -12,7 +12,9 @@ const GetData = (url) => {
         return res.json();
       })
       .then((data) => {
-        setData(data);
+        if( data !== null){
+          setData(data);
+        }
       })
       .catch((err) => {});
   }, [url]);

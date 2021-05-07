@@ -22,6 +22,7 @@ class Navbar extends React.Component {
       users: []
     };
     this.usersFromDb = [];
+    this.wrapperRef = React.createRef()
   }
   componentDidMount() {
     fetch('http://localhost:8000/users')
@@ -30,6 +31,11 @@ class Navbar extends React.Component {
         this.setState({ users: data });
         this.usersFromDb = data;
       });
+    document.addEventListener('click', this.onBlurSearch)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.onBlurSearch)
   }
 
   handleClick() {
@@ -62,19 +68,23 @@ class Navbar extends React.Component {
     });
   }
 
-  onBlurSearch() {
-    if(false){
+  onBlurSearch = (event) => {
+    const { target } = event
+    console.log(event.path[0].className);
+    if (!this.wrapperRef.current.contains(target)) {
+      if (event.path[0].className !== 'search-bar')
       this.setState({ showSearchForm: false });
     }
   }
-
 
   render() {
     const showSearchForm = this.state.showSearchForm;
     return (
       <div>
         <nav className="navbar">
-          {showSearchForm && <SearchForm users = {this.state.users} />}
+          <div ref={this.wrapperRef}>
+            {showSearchForm && <SearchForm users = {this.state.users} />}
+          </div>
           <img
             onClick={(e) => this.backToHomepage()}
             src={facebooklogo}
@@ -95,7 +105,6 @@ class Navbar extends React.Component {
             }}
             onChange= {(e) => {this.getUsers(e)}}
             onFocus={() => {this.onFocusSearch()}}
-            onBlur={() => { this.onBlurSearch() }}
           />
           <div className="middle-links">
             <div className="middle-button">
