@@ -1,17 +1,16 @@
-import icon_home from '../../assets/images/icon_home.png'
-import icon_watch from '../../assets/images/icon_watch.png'
+import avatar from '../../assets/images/avatar.jpg';
+import facebooklogo from '../../assets/images/facebook_logo.png'
+import icon_arrow from '../../assets/images/icon_arrow.png'
+import icon_bell from '../../assets/images/icon_bell.png'
 import icon_group from '../../assets/images/icon_group.png'
 import icon_gaming from '../../assets/images/icon_gaming.png'
-import icon_plus from '../../assets/images/icon_plus.svg'
+import icon_home from '../../assets/images/icon_home.png'
 import icon_mess from '../../assets/images/icon_mess.png'
-import icon_bell from '../../assets/images/icon_bell.png'
-import icon_arrow from '../../assets/images/icon_arrow.png'
-import facebooklogo from '../../assets/images/facebook_logo.png'
-import avatar from '../../assets/images/avatar.jpg';
+import icon_watch from '../../assets/images/icon_watch.png'
+import icon_plus from '../../assets/images/icon_plus.svg'
 import LogoutForm from '../LogoutForm/index'
 import React from "react";
 import SearchForm from './SearchForm'
-
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -70,10 +69,9 @@ class Navbar extends React.Component {
 
   onBlurSearch = (event) => {
     const { target } = event
-    console.log(event.path[0].className);
     if (!this.wrapperRef.current.contains(target)) {
       if (event.path[0].className !== 'search-bar')
-      this.setState({ showSearchForm: false });
+        this.setState({ showSearchForm: false });
     }
   }
 
@@ -83,7 +81,7 @@ class Navbar extends React.Component {
       <div>
         <nav className="navbar">
           <div ref={this.wrapperRef}>
-            {showSearchForm && <SearchForm users = {this.state.users} />}
+            {showSearchForm && <SearchForm users={this.state.users} />}
           </div>
           <img
             onClick={(e) => this.backToHomepage()}
@@ -103,8 +101,8 @@ class Navbar extends React.Component {
               backgroundColor: "#f0f2f5",
               border: "0px",
             }}
-            onChange= {(e) => {this.getUsers(e)}}
-            onFocus={() => {this.onFocusSearch()}}
+            onChange={(e) => { this.getUsers(e) }}
+            onFocus={() => { this.onFocusSearch() }}
           />
           <div className="middle-links">
             <div className="middle-button">
