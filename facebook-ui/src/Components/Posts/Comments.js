@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom'
 
 class Comments extends React.Component {
   constructor(props) {
@@ -7,7 +8,8 @@ class Comments extends React.Component {
   }
 
   backToHomepage() {
-    window.location.href = "/homepage?user_id=" + this.props.comment.user_id;
+    this.props.history.push("/homepage?user_id=" + this.props.comment.user_id);
+    window.location.reload();
   }
 
   render() {
@@ -51,4 +53,4 @@ class Comments extends React.Component {
   }
 }
 
-export default Comments;
+export default withRouter(Comments);

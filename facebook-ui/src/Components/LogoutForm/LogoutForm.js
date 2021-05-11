@@ -6,6 +6,7 @@ import icon_dark from "../../assets/images/icon_dark.png";
 import icon_logout from "../../assets/images/icon_logout.png";
 import avatar from '../../assets/images/avatar.jpg';
 import React from "react";
+import { withRouter } from 'react-router-dom'
 
 class LogoutForm extends React.Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class LogoutForm extends React.Component {
 
   handleClick() {
     localStorage.clear();
-    window.location.href = "/";
+    this.props.history.push("/");
+    window.location.reload();
   }
 
   render() {
@@ -305,4 +307,4 @@ class LogoutForm extends React.Component {
   }
 }
 
-export default LogoutForm;
+export default withRouter(LogoutForm);

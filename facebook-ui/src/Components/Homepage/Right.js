@@ -1,6 +1,7 @@
 import NewPost from "./NewPost";
 import GetData from "../GetData/index";
-import Posts from "../Posts/Posts";
+import Posts from "../Posts/index";
+import UserContext from '../UserContext/UserContext'
 
 const Right = (props) => {
   const { data: posts } = GetData("http://localhost:8000/posts");
@@ -29,19 +30,22 @@ const Right = (props) => {
   return (
     <div className="right_content">
       <NewPost showComponent={props.showComponent} />
-      {
+      { posts !== null ?
         (posts,
-        comments,
-        reactions && (
-          <Posts
-            posts={sortByDate(
-              posts.filter((post) => post.user_id === props.user_id)
-            )}
-            comments={sortByParentId(comments)}
-            reactions={reactions}
-          />
-        ))
-      }
+          comments,
+          reactions && (
+            <UserContext.Consumer>
+              {context => <Posts
+                userInfo={context}
+                posts={sortByDate(
+                  posts.filter((post) => post.user_id === props.user_id)
+                )}
+                comments={sortByParentId(comments)}
+                reactions={reactions}
+              />}
+            </UserContext.Consumer>
+          ))
+        : null}
     </div>
   );
 };

@@ -11,6 +11,8 @@ import icon_plus from '../../assets/images/icon_plus.svg'
 import LogoutForm from '../LogoutForm/index'
 import React from "react";
 import SearchForm from './SearchForm'
+import {withRouter} from 'react-router-dom'
+import UserContext from '../UserContext/UserContext'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -41,8 +43,8 @@ class Navbar extends React.Component {
     this.setState({ showComponent: !this.state.showComponent });
   }
 
-  backToHomepage() {
-    window.location.href = "/";
+  backToNewfeed() {
+    this.props.history.push("/");
   }
 
   onFocusSearch() {
@@ -84,7 +86,7 @@ class Navbar extends React.Component {
             {showSearchForm && <SearchForm users={this.state.users} />}
           </div>
           <img
-            onClick={(e) => this.backToHomepage()}
+            onClick={(e) => this.backToNewfeed()}
             src={facebooklogo}
             width="40px"
             alt="Logo"
@@ -122,6 +124,7 @@ class Navbar extends React.Component {
             <div className="right_button">
               <button className="icon_right" type="submit">
                 <img
+                  onClick={(e) => this.backToNewfeed()}
                   src={avatar}
                   width="100%"
                   alt="Logo"
@@ -130,15 +133,18 @@ class Navbar extends React.Component {
                   }}
                 />
               </button>
-              <span
-                style={{
-                  marginRight: "15px",
-                  fontWeight: "bold",
-                  height: "100%",
-                }}
-              >
-                {localStorage.getItem("username")}
-              </span>
+              <UserContext.Consumer>
+                {context =>
+                <span
+                  style={{
+                    marginRight: "15px",
+                    fontWeight: "bold",
+                    height: "100%",
+                  }}
+                >
+                    {context.userName}
+                </span>}
+              </UserContext.Consumer>
               <button className="icon_right" type="submit">
                 <img src={icon_plus} width="80%" alt="Logo" />
               </button>
@@ -149,7 +155,7 @@ class Navbar extends React.Component {
                 <img src={icon_bell} width="80%" alt="Logo" />
               </button>
               <button
-                onClick={(e) => this.handleClick()}
+                onClick={this.handleClick}
                 className="icon_right"
                 type="submit"
               >
@@ -164,4 +170,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

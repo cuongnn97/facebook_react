@@ -75,6 +75,42 @@
       "post_id": 1,
       "parent_id": 1,
       "id": 2
+    },
+    {
+      "create_time": "11/5/2021",
+      "content": "abc",
+      "user_id": "1",
+      "username": "cuong",
+      "post_id": 1,
+      "parent_id": "0",
+      "id": 3
+    },
+    {
+      "create_time": "11/5/2021",
+      "content": "asd",
+      "user_id": "1",
+      "username": "cuong",
+      "post_id": 1,
+      "parent_id": "0",
+      "id": 4
+    },
+    {
+      "create_time": "11/5/2021",
+      "content": "abc",
+      "user_id": "1",
+      "username": "cuong",
+      "post_id": 1,
+      "parent_id": "0",
+      "id": 5
+    },
+    {
+      "create_time": "11/5/2021",
+      "content": "abc",
+      "user_id": "1",
+      "username": "cuong",
+      "post_id": 3,
+      "parent_id": "0",
+      "id": 6
     }
   ],
   "user_relationship": [

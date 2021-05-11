@@ -3,6 +3,8 @@ import icon_comment from "../../assets/images/icon_comment.png";
 import icon_share from "../../assets/images/icon_share.jpg";
 import React from "react";
 import Comments from "./Comments";
+import { withRouter } from 'react-router-dom'
+
 
 class Post extends React.Component {
   constructor(props) {
@@ -14,8 +16,10 @@ class Post extends React.Component {
         (today.getMonth() + 1) +
         "/" +
         today.getFullYear();
-    this.localUserId = localStorage.getItem("user_id");
-    this.localUserName = localStorage.getItem("username");
+    this.localUserId = this.props.userInfo.userId;
+    this.localUserName = this.props.userInfo.userName;
+    const url = new URL(window.location.href);
+    this.userId = url.searchParams.get("user_id");
     this.state = {
       content: "",
       parent_id: "0",
@@ -57,10 +61,9 @@ class Post extends React.Component {
     }).then(function (response) {
       return response.json();
     });
-    window.location.reload();
   };
 
-  showReplyField = (id) => {
+  showReplyField = () => {
     this.setState({ showReplyField: !this.state.showReplyField });
   };
 
@@ -109,7 +112,8 @@ class Post extends React.Component {
   }
 
   backToHomepage() {
-    window.location.href = "/homepage?user_id=" + this.props.post.user_id;
+    this.props.history.push("/homepage?user_id=" + this.props.post.user_id);
+    window.location.reload();
   }
 
   render() {
@@ -380,6 +384,7 @@ class Post extends React.Component {
               alt="submit"
             />
             <form onSubmit={this.modifyTask}>
+              <input type="hidden" name="user_id" value={this.userId}/>
               <input
                 onChange={(e) => this.handleChange(e)}
                 type="text"
@@ -402,4 +407,4 @@ class Post extends React.Component {
   }
 }
 
-export default Post;
+export default withRouter(Post);

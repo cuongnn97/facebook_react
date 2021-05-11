@@ -2,6 +2,7 @@ import NewPost from "./NewPost"
 import Posts from "../Posts/index"
 import Story from "./Story"
 import GetData from "../GetData/GetData";
+import UserContext from '../UserContext/UserContext'
 
 const Center = () => {
 
@@ -32,17 +33,20 @@ const Center = () => {
     <div className="content_center">
       <Story />
       <NewPost />
-      {
+      { posts !== null ?
         (posts,
-        comments,
-        reactions && (
-          <Posts
-            posts={sortByDate(posts)}
-            comments={sortByParentId(comments)}
-            reactions={reactions}
-          />
-        ))
-      }
+          comments,
+          reactions && (
+            <UserContext.Consumer>
+              {context => <Posts
+                userInfo={context}
+                posts={sortByDate(posts)}
+                comments={sortByParentId(comments)}
+                reactions={reactions}
+              />}
+            </UserContext.Consumer>
+          ))
+        : null}
     </div>
   );
 }

@@ -108,7 +108,7 @@ class Login extends React.Component {
                 </div>
                 <button
                   className="login_button"
-                  onClick={(e) => this.handleClick()}
+                  onClick={this.handleClick}
                 >
                   Đăng nhập
                 </button>

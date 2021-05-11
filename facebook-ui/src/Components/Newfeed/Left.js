@@ -1,24 +1,32 @@
 import avatar from '../../assets/images/avatar.jpg'
 import icon_arrow from "../../assets/images/icon_arrow.png";
-const Left = () => {
+import { withRouter } from 'react-router-dom'
+import UserContext from '../UserContext/UserContext'
 
-  function handleClick() {
-    window.location.href = "/homepage?user_id=" + localStorage.getItem("user_id");
+const Left = (props) => {
+
+  function handleClick(id) {
+    props.history.push("/homepage?user_id=" + id);
+    window.location.reload();
   }
 
   return (
     <div className="content_left">
-      <div
-        onClick={(e) => handleClick()}
-        className="left_item_username"
-      >
-        <div className="icon_setting">
-          <img src={avatar} width="8%" alt="submit" />
+      <UserContext.Consumer>
+        {context =>
+        <div
+          onClick={(e) => handleClick(context.userId)}
+          className="left_item_username"
+        >
+          <div className="icon_setting">
+            <img src={avatar} width="8%" alt="submit" />
+          </div>
+          <div className="content_setting">
+            <p>{context.userName}</p>
+          </div>
         </div>
-        <div className="content_setting">
-          <p>{localStorage.getItem("username")}</p>
-        </div>
-      </div>
+        }
+      </UserContext.Consumer>
 
       <div className="left_item">
         <div className="icon_setting">
@@ -249,4 +257,4 @@ const Left = () => {
   );
 };
 
-export default Left;
+export default withRouter(Left);

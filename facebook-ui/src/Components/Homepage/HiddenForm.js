@@ -13,8 +13,8 @@ class HiddenForm extends React.Component {
     this.state = {
       content: "",
     };
-    this.userId =  localStorage.getItem("user_id");
-    this.username =  localStorage.getItem("username");
+    this.userId = props.userInfo.userId;
+    this.username = props.userInfo.userName;
   }
 
   handleChange = (event) => {
@@ -49,7 +49,7 @@ class HiddenForm extends React.Component {
         <div className="hidden_form">
           <form onSubmit={this.handleSubmit}>
             <img
-              onClick={(e) => this.closeForm()}
+              onClick={this.closeForm}
               src={
                 "https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
               }
